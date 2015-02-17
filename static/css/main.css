@@ -315,7 +315,7 @@ body {
   .header-bar .about, .header-bar .blog, .header-bar .ico {
     text-align: center; }
   .header-bar .header-nav-button {
-    font-size: 4vw; }
+    font-size: 10vh; }
 
 .info-section {
   height: 500px;
@@ -329,7 +329,8 @@ body {
   .info-section .section-info {
     text-align: center;
     width: 100%;
-    padding: 5%; }
+    padding: 5%;
+    font-size: 1.5vw; }
 
 .img1 {
   background: url(../img/DetroitSkyline.jpg) no-repeat center center;
