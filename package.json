@@ -4,7 +4,8 @@
   "description": "Express migreva",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,15 +19,33 @@
   "homepage": "https://github.com/migreva/migreva",
   "dependencies": {
     "bootstrap": "^3.3.4",
+    "bootstrap-sass": "^3.3.4",
+    "browserify": "^10.2.0",
     "express": "^4.12.3",
+    "font-awesome": "^4.3.0",
     "gulp": "^3.8.11",
     "gulp-batch": "^1.0.5",
     "gulp-cssnext": "^1.0.0",
+    "gulp-filter": "^2.0.2",
     "gulp-postcss": "^5.1.3",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-watch": "^4.2.4",
     "jade": "^1.9.2",
-    "lodash": "^3.7.0",
+    "jquery-browserify": "^1.8.1",
+    "lodash": "^3.8.0",
     "nodemon": "^1.3.7",
-    "postcss-import": "^5.2.2"
+    "postcss-color-function": "^1.2.0",
+    "postcss-import": "^5.2.2",
+    "postcss-log-warnings": "^0.2.0",
+    "postcss-nested": "^0.3.1",
+    "postcss-simple-vars": "^0.3.0",
+    "postcss-url": "^3.2.0",
+    "skrollr": "^0.6.26",
+    "swiper": "^3.0.7",
+    "velocity": "^0.7.2",
+    "velocity-animate": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

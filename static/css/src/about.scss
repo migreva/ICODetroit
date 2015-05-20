@@ -1,0 +1,93 @@
+@import "./include/subpage.scss";
+@import "/font-awesome/css/font-awesome.min.css";
+
+#the-idea {
+	.idea {
+		padding: 20px 10px 0px 10px;
+		overflow: auto;
+		.idea-description {
+			@include grid(8, 8, 12);
+			display: inline-block;
+
+		}
+		.idea-word {
+			@include grid(4, 4, 12);
+			font-size: 4em;
+			text-align: center;
+			font-family: chalkboard;
+			color: $primary-color;
+			display: inline-block;
+
+			&.right {
+				@media(min-width: $screen-md-min) {
+					float: right;
+				}
+			}
+		}		
+	}
+}
+
+#the-artists {
+	.artist {
+		padding: 20px 0px;
+		.artist-title {
+			@include grid(4, 12, 12);
+			font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+
+			h2 {
+				width: 100%;
+				text-align: center;
+			}
+		}
+		.description {
+			@include grid(8, 12, 12);
+			font-family: 'Lucida Bright', Georgia, serif;
+
+			.image {
+				@include grid(6, 6, 12);
+
+				img {
+					width: 100%;
+					border-radius: 10px;
+				}
+			}
+			.about {
+				@include grid(6, 6, 12);
+				font-size: $font-size-lg;
+
+				.contact {
+					a {
+						@include grid(6, 6, 6);
+						font-size: 45px;
+						text-align: center;
+
+						@media (min-width: $screen-md-min) {
+							font-size: 90px;
+						}
+
+						&.twitter {
+							i:hover {
+								color: $twitter-blue !important;
+							}
+						}
+
+						&.email {
+							i:hover {
+								color: $primary-color !important;
+							}
+						}
+					}
+				}
+
+				.fa {
+					color: grey !important;
+				}
+			}
+		}
+	}
+
+	hr {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
