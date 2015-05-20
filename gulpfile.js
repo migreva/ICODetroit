@@ -1,11 +1,12 @@
 var gulp = require('gulp');
+var browserify = require('browserify');
+var _ = require('lodash');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
-
-// Postcss
-var postcss = require('gulp-postcss');
-var cssnext = require('gulp-cssnext');
-var atImport = require('postcss-import');
+var sass = require('gulp-sass');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var buffer = require('vinyl-buffer');
 
 // Constants
 var STATIC = {
@@ -14,27 +15,64 @@ var STATIC = {
   distRoot: './static/dist',
 }
 
-var cssRoot = STATIC.srcRoot + '/css';
-var cssDist = STATIC.distRoot + '/css';
-var cssFiles = cssRoot + '/**/*.css';
+// SASS/CSS File paths
+var cssRoot = STATIC.root + '/css/src';
+var cssDist = STATIC.root + '/css/dist';
+var sassFiles = cssRoot + '/**/*.scss';
 
-gulp.task('css', function() {
+// JS File paths
+var jsRoot = STATIC.root + '/js/src';
+var jsDist = STATIC.root + '/js/dist';
+var jsFiles = jsRoot + '/**/*.js';
+var jsSrcFiles = ['index.js', 'about.js', 'ico.js', 'blog.js', 'contact.js'];
 
-  var processors = [
-    cssnext
-  ];
-
-  return gulp.src(cssFiles)
-          .pipe(cssnext({
-            compress: true,
-          }))
-          .pipe(gulp.dest(cssDist));
+gulp.task('sass', function () {
+  gulp.src(sassFiles)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(cssDist));
 });
+
+gulp.task('js', function() {
+  _.forEach(jsSrcFiles, function(file) {
+    bundlejs(file);
+  });
+  return;
+});
+
+function bundlejs(file) {
+  var b = browserify(jsRoot + '/' + file, {
+    shim: {
+      jQuery: {
+          path: 'public/js/jquery.min.js',
+          exports: '$'
+      }
+    }
+  });
+
+  return b.bundle()
+          .pipe(source(file))
+          .pipe(buffer())
+          .pipe(sourcemaps.init())
+            // .pipe(uglify())
+            // .on('error', gutil.log)
+          .pipe(sourcemaps.write('./', {
+            // includeContent: true,
+            sourceRoot: '/src',
+            sourceMappingURLPrefix: '/dist/js/'
+
+          }))
+          .pipe(gulp.dest(jsDist));
+}
 
 gulp.task('watch', function() {
 
-  watch(cssFiles, batch(function() {
-    gulp.start('css')
-      .pipe(watch(cssFiles));
+  watch(sassFiles, batch(function() {
+    gulp.start('sass')
+      .pipe(watch(sassFiles));
+  }));
+
+  watch(jsFiles, batch(function() {
+    gulp.start('js')
+      .pipe(watch(jsFiles));
   }));
 });

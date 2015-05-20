@@ -1,0 +1,73 @@
+@import "base.scss";
+
+$gap-overlay-z-index: 1;
+$section-z-index: $gap-overlay-z-index + 1;
+
+.subnav {
+	width: 100%;
+	margin-bottom: 10px;
+
+	.ico-btn {
+		border-radius: 0px;
+		text-align: center;
+		background-color: white;
+		color: $primary-color;
+		@include grid(4);
+
+		&:hover {
+			color: $primary-color;
+		}
+
+		&.active {
+			// background-color: $primary-color;
+			// color: white;
+			color: $primary-color;
+			border: 1px solid $primary-color;
+		}
+	}
+}
+
+.gap-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	
+	z-index: $gap-overlay-z-index;
+}
+
+.section {
+	background: rgba(#000000, .2);
+	z-index: $section-z-index;
+}
+
+
+.content {
+	height: 100%;
+	position: relative;
+	
+	.content-section {
+		height: 100%;
+
+		.swiper-container {
+			height: 100%;
+		}
+	}	
+}
+
+.content-section {
+	opacity: 0;
+	display: none;
+	// position: absolute;
+	top: 0;
+	left: 0;
+
+	&:first-child {
+		opacity: 1;
+	}
+
+	&.active {
+		display: block;
+	}
+}

@@ -1,0 +1,254 @@
+@import "./include/base.scss";
+@import "./include/skrollr.scss";
+
+$padding-md: 250px;
+$padding-sm: 100px;
+
+.section {
+	@include transition-mixin(opacity 500ms ease-in);
+	height: 100%;
+
+	p {
+		font-size: 1.45em;
+		@media(min-width: $screen-md-min) {
+			font-size: 1em;
+		}
+	}
+
+	&#top {
+		background-color: $primary-color;
+		opacity: 0;
+		.title {
+			color: white;	
+			text-align: center;
+			a, a:visited, a:hover, a:active {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+		padding-top: $padding-sm;
+	
+		@media (min-width: $screen-xs-min) {
+			padding-top: $padding-md;
+		}
+		.menu {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.menu-item {
+				background-origin: content-box;
+				background-repeat: no-repeat;			
+				background-position: 0 0;
+				background-size: 100% 100%;
+				height: $padding-sm;
+				width: $padding-sm;
+				position: absolute;
+				padding: .5%;
+				opacity: 0;
+
+
+				a, a:visited, a:hover, a:active {
+					text-decoration: none;
+					color: inherit;
+				}
+
+				@media (min-width: $screen-xs-min) {
+					height: $padding-md;
+					width: $padding-md;
+				}
+
+
+				.text {
+					font-size: 1.5em;
+					position: absolute;
+					@media (min-width: $screen-xs-min) {
+						font-size: 4em;
+					}
+				}
+
+				&.about {
+					background-image: url(/img/thought_bubble.png);
+					left: 0%;	
+					top: 2;
+					
+					@media (min-width: $screen-sm-min)  {
+						left: 20%;	
+					}
+					
+
+					.text {
+						top: 26%;
+						left: 23%;
+					}
+				}
+
+				&.blog {
+					background-image: url(/img/thought_bubble_right.png);
+					top: 2;
+					right: 0%;
+					@media (min-width: $screen-sm-min)  {
+						right: 15%;
+					}
+
+					.text {
+						top: 29%;
+						left: 27%;
+					}
+				}
+
+				&.contact {
+					background-image: url(/img/thought_bubble_right_invert.png);
+					right: 30%;
+					top: $padding-md * .7;
+
+					@media (min-width: $screen-xs-min)  {
+						top: $padding-md * 1.6;
+					}
+
+					.text {
+						top: 48%;
+						left: 11%;
+					}
+				}
+			}
+		}
+	}
+
+	&#about {
+		
+		.title {
+			background: rgba(#ffffff, .5);
+			margin: 3% 0% 0% 3%;
+			color: $primary-color;
+			display: inline-block;
+			padding: 0 3%;
+			border-radius: 5px;	
+		
+			@media (min-width: $screen-md-min) {
+				margin-left: 7%;
+			}
+		}
+
+		.about-content {
+			font-size: 1.5em;
+			text-align: center;
+			margin: 3% 5%;
+
+			@media (min-width: $screen-sm-min) {
+				font-size: 3.25em;
+			}
+			@media (min-width: $screen-sm-min) {
+				font-size: 3.8em;
+			}
+		}
+		a.learn-more {
+			margin: 0 auto;
+			float: none;
+		}
+	}
+
+	&#contact {
+		background-color: white;
+		.title {
+			background: rgba($primary-color, .5);
+			color: white;
+			display: inline-block;
+			float: right;
+			margin: 3% 3% 0% 0%;	
+			padding: 0 3%;
+			border-radius: 5px;	
+		
+			@media (min-width: $screen-md-min) {
+				margin-right: 7%;
+			}
+		}
+
+		.contact-person {
+			margin: 20px auto;
+			font-family: chalkboard;
+			color: white;
+			position: relative;
+			// padding: 10px;
+
+			&#kristian {
+				$contact-height:  160px * 2;
+				height: $contact-height;
+				// background: url(/static/img/kristian.jpg) no-repeat center center;
+				background-image: url(/img/kristian2.jpg);
+				background-repeat: no-repeat;
+				background-size: 100%;
+				background-position: center;
+
+				@media (min-width: $screen-md-min) {
+					background-size: 75%;
+				}
+
+
+				// 1070 × 1600
+				// Aspect ratio: 107 : 160
+					img {
+						height: $contact-height;
+						width: 107px * 2;
+					}					
+			}
+			.image {
+
+			}
+			.contact-info {
+				.contact-label {
+					color: $primary-color;
+					font-size: 5em;
+				}
+
+				.info {
+					font-size: 2em;
+					display: block;
+				}
+				a.info, a.info * {
+					text-decoration: none;
+					color: white;
+					display: inline-block;
+
+					@media (min-width: $screen-md-min) {
+						display: block;
+					}
+				}
+
+			}
+		}
+	}
+
+	h2 {
+		font-family: chalkboard;
+	}
+
+
+	.title {
+		font-size: 5em;
+		font-family: "chalkboard";
+
+		@media (min-width: $screen-xs-min) {
+			font-size: 8em;	
+		}
+	}
+
+	.section-title {
+		font-size: 4em;
+
+		@media (min-width: $screen-xs-min) {
+			font-size: 7em;	
+		}
+	}
+}
+
+.overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(black, .5);
+}

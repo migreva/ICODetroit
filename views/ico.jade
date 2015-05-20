@@ -1,0 +1,47 @@
+extends ./subpage
+
+block vars
+  - var active = 'ico';
+
+block css
+  link(rel='stylesheet', type='text/css', href='css/dist/ico.css')
+
+block subnav
+  a.ico-btn.ico-btn-lg.active(href='#tutoring-schedule') TUTORING SCHEDULE
+  a.ico-btn.ico-btn-lg(href='#learning-tools') LEARNING TOOLS 
+  a.ico-btn.ico-btn-lg(href="#gallery") GALLERY
+
+block content
+  .content-section.container-fluid#tutoring-schedule.active
+    .swiper-container
+      .swiper-wrapper
+        // Slides
+        .swiper-slide 
+          .event
+            h2.event-title Craft Day
+            h4.event-subtitle Craft Day at 5629 Gallery
+            .address 
+              .street 5629 Michigan Ave.
+              .city Detroit, MI 48210
+        .swiper-slide
+          .event
+            h2.event-title Tutoring Day
+            h4.event-subtitle Tutoring Day at Central Alliance Church
+            .address
+              .street 616 West Hancock 
+              .city Detroit, MI 48201
+        .swiper-slide
+          .event
+            h2.event-title Photo Class
+            h4.event-subtitle Photo Class at Focus Hope
+
+      .swiper-button-prev
+      .swiper-button-next
+
+  .content-section.container-fluid#learning-tools
+    h2 Coming soon!
+
+  .content-section.container-fluid#gallery
+    h2 Coming soon!
+
+  script(src='/js/dist/ico.js', type='text/javascript')
