@@ -12,11 +12,13 @@ $default-string: "";
 
 @mixin grid($md: $default-string, $sm: $default-string) {
   @if $sm != $default-string {
-    @include span($sm);
+    // @media (max-width: $screen-sm) {
+      @include span($sm);
+    // }
   }
   @if $md != $default-string {
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       @include span($md);
     }
   }
