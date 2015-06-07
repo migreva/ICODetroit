@@ -1,16 +1,14 @@
 /* Colors */
-$primary-color: #ed7307;
-$secondary-color: #163BA0;
+$primary-color: #ed7307; // Orange
+$secondary-color: #163BA0; // Blue
 $twitter-blue: #55ACEE;
-
-
 
 /* Framework constants */
 
 // Fonts
 $font-size-base: 14px;
 $font-size-sm: ceil($font-size-base * .8);
-$font-size-med: ceil($font-size-base * 1.2);
+$font-size-md: ceil($font-size-base * 1.2);
 $font-size-lg: ceil($font-size-base * 1.4);
 
 // Line heights
@@ -19,6 +17,16 @@ $line-height-base: 1.428571429;
 // Height heights
 $button-height: ceil($font-size-base * 1.2);
 $button-height-sm: ceil($button-height * .8);
-$button-height-med: ceil($button-height * 1.2);
+$button-height-md: ceil($button-height * 1.2);
 $button-height-lg: ceil($button-height * 1.4);
+
+// Screen sizes
+$screen-md: 992px;
+$screen-sm: 768px;
+
+/* End Framework constants */
+
+/* Navbar stuff */
+$navbar-height: 60px;
+$z-index-navbar: 2000;
 

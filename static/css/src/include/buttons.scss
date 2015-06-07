@@ -10,6 +10,7 @@ $ico-btn: ico-btn;
   display: block;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
 
   @at-root a.#{$ico-btn} {
     &, &:hover, &:focus {

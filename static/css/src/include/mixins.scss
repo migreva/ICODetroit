@@ -1,5 +1,5 @@
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss";
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import 'constants';
+@import '../../../../node_modules/jeet/scss/jeet/index.scss';
 
 $default-string: "";
 
@@ -10,14 +10,14 @@ $default-string: "";
 	-webkit-transition: $transition-string;
 }
 
-@mixin grid($md: $default-string, $sm: $default-string, $xs: $default-string) {
-  @if $md != $default-string {
-    @include make-md-column($md);  
-  }
+@mixin grid($md: $default-string, $sm: $default-string) {
   @if $sm != $default-string {
-    @include make-sm-column($sm);
+    @include span($sm);
   }
-  @if $xs != $default-string {
-    @include make-xs-column($xs);
+  @if $md != $default-string {
+
+    @media (min-width: $screen-md) {
+      @include span($md);
+    }
   }
-} 
+}

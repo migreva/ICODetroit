@@ -1,5 +1,5 @@
+var base = require('./base');
 var $ = require('jquery-browserify');
-var bootstrap = require('bootstrap');
 var velocity  = require('velocity-animate');
 
 $(function() {
@@ -21,7 +21,7 @@ $(function() {
       $(elements).removeClass('active');
 
       $(href).addClass('active').velocity({opacity: 1});
-    });    
+    });
   });
 
 });

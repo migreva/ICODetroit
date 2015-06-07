@@ -3,7 +3,7 @@
 - menu_items.push({ value: 'ico', displayName: 'ICO', href: "/ico" });
 - menu_items.push({ value: 'about', displayName: 'About', href: "/about" });
 - menu_items.push({ value: 'blog', displayName: 'Blog', href: "/blog" });
-- menu_items.push({ value: 'contact', displayName: 'Contact', href: "contact" })
+- menu_items.push({ value: 'contact', displayName: 'Contact', href: "contact" });
 
 block vars
 
@@ -11,35 +11,35 @@ doctype html
 mixin nav_item(item)
   //- item == obj in menu_item array
   if (active == item.value)
-    li(class='#{item.value} active')
-      a(href='#{item.href}') #{item.displayName}
+    div(class='nav-item-container')
+      a(href='#{item.href}', class='nav-item #{item.value} active') #{item.displayName}
   else
-    li(class='#{item.value}')
-      a(href='#{item.href}') #{item.displayName}
+    div(class='nav-item-container')
+      a(href='#{item.href}', class='nav-item #{item.value}') #{item.displayName}
 
 head
   include ./meta.jade
 
   block css
-    
-body 
-  .navbar.navbar-default.navbar-static-top
-    .container-fluid
-      .navbar-header
-        button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#ico-navbar")
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
 
-      .collapse.navbar-collapse#ico-navbar
-        ul.nav.navbar-nav
-          each item in menu_items
-            +nav_item(item)
+body
+  .navbar
+    .nav-menu-toggle
+      .i.fa.fa-bars
+    //- .navbar-header
+    //-   button.navbar-toggle.collapsed
+    //-     span.sr-only Toggle navigation
+    //-     span.icon-bar
+    //-     span.icon-bar
+    //-     span.icon-bar
 
-  .subnav.container-fluid
+    .nav-menu
+      each item in menu_items
+        +nav_item(item)
+
+  .subnav
     block subnav
 
-  .container-fluid.content
+  .content
       block content
 

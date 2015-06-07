@@ -7,14 +7,14 @@ $(function() {
 	var s = skrollr.init();
 
 	/** Animate the opening title page */
-	$("#top").velocity({ opacity: 1 }, {
-		easing: "ease-in",
+	$('#top').velocity({ opacity: 1 }, {
+		easing: 'ease-in',
 		complete: function(elements) {
-			$(".menu-item").each(function(i) {
+			$('.menu-item').each(function(i) {
 				var $item = $(this);
 				setTimeout(function() {
 					$item.velocity({ opacity: 1 }, {
-						easing: "ease-in"
+						easing: 'ease-in'
 					});
 				}, 1000 * (i + 1))
 			});

@@ -1,4 +1,5 @@
 var $ = require('jquery-browserify');
+var velocity = require('velocity-animate');
 
 $(function() {
   // WHAT
@@ -15,16 +16,40 @@ $(function() {
     });
   }
 
+  /* Navbar */
+  $('.nav-menu-toggle').on('click', function() {
+    var $navMenu = $('.nav-menu');
+    var $navItems = $('.nav-item-container');
+    var height = 1;
+    var callback = function() {};
 
-  $(".ico-btn.animation").hover(
+    if ($navMenu.hasClass('show')) {
+      callback = function() {
+        $navMenu.removeClass('show');
+      }
+    }
+    else {
+      height += $navItems.outerHeight() * $navItems.length;
+      $('.nav-menu').toggleClass('show');
+    }
+
+    $navMenu.velocity({
+      height: height
+    }, callback)
+  });
+  /* End navbar */
+
+  /* Buttons */
+  $('.ico-btn.animation').hover(
     /** handlerin */
     function(e) {
       var $el = $(this);
-      $el.removeClass("jelly-animation-out").addClass("jelly-animation");
+      $el.removeClass('jelly-animation-out').addClass('jelly-animation');
     },
     function(e) {
       var $el = $(this);
-      $el.removeClass("jelly-animation").addClass("jelly-animation-out");
+      $el.removeClass('jelly-animation').addClass('jelly-animation-out');
     }
   );
+  /* End Buttons */
 });
