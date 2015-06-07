@@ -749,7 +749,10 @@ body {
 .subnav {
   width: 100%;
   margin-bottom: 10px;
-  height: 50px; }
+  height: 150px; }
+  @media (min-width: 768px) {
+    .subnav {
+      height: 50px; } }
   .subnav .ico-btn {
     *zoom: 1;
     float: left;
@@ -762,7 +765,8 @@ body {
     text-align: center;
     background-color: white;
     color: #ed7307;
-    text-align: center !important; }
+    text-align: center !important;
+    height: 50px; }
     .subnav .ico-btn:before, .subnav .ico-btn:after {
       content: '';
       display: table; }

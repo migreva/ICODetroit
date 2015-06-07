@@ -95,7 +95,11 @@ body {
 .subnav {
 	width: 100%;
 	margin-bottom: 10px;
-  height: 50px;
+  height: 50px * 3;
+
+  @media (min-width: $screen-sm) {
+    height: 50px;
+  }
 
 	.ico-btn {
     @include grid(1/3, 1/1);
@@ -104,6 +108,7 @@ body {
 		background-color: white;
 		color: $primary-color;
     text-align: center !important;
+    height: 50px;
 
 		&:hover {
 			color: $primary-color;
