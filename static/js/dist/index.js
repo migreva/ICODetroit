@@ -8,14 +8,14 @@ $(function() {
 	var s = skrollr.init();
 
 	/** Animate the opening title page */
-	$("#top").velocity({ opacity: 1 }, {
-		easing: "ease-in",
+	$('#top').velocity({ opacity: 1 }, {
+		easing: 'ease-in',
 		complete: function(elements) {
-			$(".menu-item").each(function(i) {
+			$('.menu-item').each(function(i) {
 				var $item = $(this);
 				setTimeout(function() {
 					$item.velocity({ opacity: 1 }, {
-						easing: "ease-in"
+						easing: 'ease-in'
 					});
 				}, 1000 * (i + 1))
 			});
@@ -13233,6 +13233,7 @@ will produce an inaccurate conversion value. The same issue exists with the cx/c
 var framework = require('./framework');
 },{"./framework":6}],6:[function(require,module,exports){
 var $ = require('jquery-browserify');
+var velocity = require('velocity-animate');
 
 $(function() {
   // WHAT
@@ -13249,19 +13250,44 @@ $(function() {
     });
   }
 
+  /* Navbar */
+  $('.nav-menu-toggle').on('click', function() {
+    var $navMenu = $('.nav-menu');
+    var $navItems = $('.nav-item-container');
+    var height = 1;
+    var callback = function() {};
 
-  $(".ico-btn.animation").hover(
+    if ($navMenu.hasClass('show')) {
+      callback = function() {
+        $navMenu.removeClass('show');
+      }
+    }
+    else {
+      height += $navItems.outerHeight() * $navItems.length;
+      $('.nav-menu').toggleClass('show');
+    }
+
+    $navMenu.velocity({
+      height: height
+    }, callback)
+  });
+  /* End navbar */
+
+  /* Buttons */
+  $('.ico-btn.animation').hover(
     /** handlerin */
     function(e) {
       var $el = $(this);
-      $el.removeClass("jelly-animation-out").addClass("jelly-animation");
+      $el.removeClass('jelly-animation-out').addClass('jelly-animation');
     },
     function(e) {
       var $el = $(this);
-      $el.removeClass("jelly-animation").addClass("jelly-animation-out");
+      $el.removeClass('jelly-animation').addClass('jelly-animation-out');
     }
   );
+  /* End Buttons */
 });
-},{"jquery-browserify":2}]},{},[1]);
+},{"jquery-browserify":2,"velocity-animate":4}]},{},[1])
+
 
 //# sourceMappingURL=/dist/js/index.js.map

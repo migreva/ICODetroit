@@ -10,7 +10,7 @@ $padding-sm: 100px;
 
 	p {
 		font-size: 1.45em;
-		@media(min-width: $screen-md-min) {
+		@media(min-width: $screen-md) {
 			font-size: 1em;
 		}
 	}
@@ -18,17 +18,25 @@ $padding-sm: 100px;
 	&#top {
 		background-color: $primary-color;
 		opacity: 0;
-		.title {
+
+		.title-container {
 			color: white;
 			text-align: center;
+
+			&, & * {
+				color: white;
+				font-family: 'chalkboard';
+			}
+
 			a, a:visited, a:hover, a:active {
 				text-decoration: none;
 				color: inherit;
+				font-size: 100px;
 			}
 		}
 		padding-top: $padding-sm;
 
-		@media (min-width: $screen-xs-min) {
+		@media (min-width: $screen-sm) {
 			padding-top: $padding-md;
 		}
 		.menu {
@@ -55,7 +63,7 @@ $padding-sm: 100px;
 					color: inherit;
 				}
 
-				@media (min-width: $screen-xs-min) {
+				@media (min-width: $screen-sm) {
 					height: $padding-md;
 					width: $padding-md;
 				}
@@ -64,7 +72,7 @@ $padding-sm: 100px;
 				.text {
 					font-size: 1.5em;
 					position: absolute;
-					@media (min-width: $screen-xs-min) {
+					@media (min-width: $screen-sm) {
 						font-size: 4em;
 					}
 				}
@@ -74,10 +82,9 @@ $padding-sm: 100px;
 					left: 0%;
 					top: 2;
 
-					@media (min-width: $screen-sm-min)  {
+					@media (min-width: $screen-sm)  {
 						left: 20%;
 					}
-
 
 					.text {
 						top: 26%;
@@ -89,7 +96,7 @@ $padding-sm: 100px;
 					background-image: url(/img/thought_bubble_right.png);
 					top: 2;
 					right: 0%;
-					@media (min-width: $screen-sm-min)  {
+					@media (min-width: $screen-sm)  {
 						right: 15%;
 					}
 
@@ -104,7 +111,7 @@ $padding-sm: 100px;
 					right: 30%;
 					top: $padding-md * .7;
 
-					@media (min-width: $screen-xs-min)  {
+					@media (min-width: $screen-sm)  {
 						top: $padding-md * 1.6;
 					}
 
@@ -120,14 +127,13 @@ $padding-sm: 100px;
 	&#about {
 
 		.title {
-			background: rgba(#ffffff, .5);
 			margin: 3% 0% 0% 3%;
 			color: $primary-color;
 			display: inline-block;
 			padding: 0 3%;
 			border-radius: 5px;
 
-			@media (min-width: $screen-md-min) {
+			@media (min-width: $screen-md) {
 				margin-left: 7%;
 			}
 		}
@@ -137,16 +143,17 @@ $padding-sm: 100px;
 			text-align: center;
 			margin: 3% 5%;
 
-			@media (min-width: $screen-sm-min) {
+			@media (min-width: $screen-sm) {
 				font-size: 3.25em;
 			}
-			@media (min-width: $screen-sm-min) {
+			@media (min-width: $screen-sm) {
 				font-size: 3.8em;
 			}
 		}
 		a.learn-more {
 			margin: 0 auto;
 			float: none;
+			@include center(500px);
 		}
 	}
 
@@ -161,7 +168,7 @@ $padding-sm: 100px;
 			padding: 0 3%;
 			border-radius: 5px;
 
-			@media (min-width: $screen-md-min) {
+			@media (min-width: $screen-md) {
 				margin-right: 7%;
 			}
 		}
@@ -182,7 +189,7 @@ $padding-sm: 100px;
 				background-size: 100%;
 				background-position: center;
 
-				@media (min-width: $screen-md-min) {
+				@media (min-width: $screen-md) {
 					background-size: 75%;
 				}
 
@@ -212,7 +219,7 @@ $padding-sm: 100px;
 					color: white;
 					display: inline-block;
 
-					@media (min-width: $screen-md-min) {
+					@media (min-width: $screen-md) {
 						display: block;
 					}
 				}
@@ -230,7 +237,7 @@ $padding-sm: 100px;
 		font-size: 5em;
 		font-family: "chalkboard";
 
-		@media (min-width: $screen-xs-min) {
+		@media (min-width: $screen-sm) {
 			font-size: 8em;
 		}
 	}
@@ -238,7 +245,7 @@ $padding-sm: 100px;
 	.section-title {
 		font-size: 4em;
 
-		@media (min-width: $screen-xs-min) {
+		@media (min-width: $screen-sm) {
 			font-size: 7em;
 		}
 	}

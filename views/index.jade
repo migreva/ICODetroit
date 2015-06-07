@@ -14,11 +14,10 @@ block skrollr-images
 
 
 block content
-  .section.container-fluid#top
+  .section#top
     .title-container.row
 
-      a(href='/ico')
-        .title IMAGINARIUM
+      a(href='/ico') IMAGINARIUM
     .menu
       .menu-item.about
         a(href='/about')
@@ -30,22 +29,22 @@ block content
         a(href='/contact')
           .text Contact
   .gap.gap-100(style='background-image:url(img/river.jpg);')
-    #about.section.container-fluid
+    #about.section
       .title ABOUT
       .about-content The Imaginarium Creative Outreach is a Detroit non-profit organization with a devotion to expose every child in the city to their artistic passion.
-      a.learn-more.col-md-3.col-sm-6.col-xs-6.ico-btn.ico-btn-lg.animation(href='/about') Learn More
+      a.learn-more.ico-btn.ico-btn-lg.animation(href='/about') Learn More
 
-  //- #contact.container-fluid.section
+  //- #contact.section
   //-   .title-container.row
   //-     .title CONTACT
   //-   .row
-  //-     .contact-person#kristian.container-fluid
+  //-     .contact-person#kristian
   //-       .overlay
   //-       .row
-  //-         .contact-info.col-md-5.col-sm-5.col-xs-12
+  //-         .contact-info
   //-           .contact-label.row WHO
   //-           .info.row Kristian Chanel, Founder
-  //-         .contact-info.email.col-md-offset-2.col-md-5.col-sm-offset-2.col-sm-2.col-xs-12
+  //-         .contact-info.email
   //-           .contact-label.row EMAIL
   //-           a.info(href="mailto:icodetroit@gmail.com") icodetroit
   //-           a.info(href="mailto:icodetroit@gmail.com") @

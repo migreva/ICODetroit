@@ -3,16 +3,107 @@
 $gap-overlay-z-index: 1;
 $section-z-index: $gap-overlay-z-index + 1;
 
+body {
+	margin-top: $navbar-height + 5px;
+}
+
+.navbar {
+  height: $navbar-height;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #eee;
+
+  &, & * {
+  	z-index: $z-index-navbar;
+  }
+
+  .nav-menu-toggle {
+  	position: absolute;
+  	height: 100%;
+  	font-size: $font-size-md;
+  	padding-top: 20px;
+  	right: 20px;
+  	cursor: pointer;
+
+    &, & * {
+      color: $primary-color;
+    }
+
+  	@media (min-width: $screen-md) {
+  		display: none;
+  	}
+  }
+
+  .nav-menu {
+  	width: 100%;
+  	position: absolute;
+  	top: $navbar-height;
+  	border-top: 1px solid darken(#eee, 40%);
+    overflow: hidden;
+    height: 1px;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+
+  	@media (min-width: $screen-sm) {
+      display: block;
+  		position: relative;
+  		top: 0;
+  		border: none;
+      height: $navbar-height;
+  	}
+
+  	.nav-item-container {
+  		@include grid(1/5, 1/1);
+      height: $navbar-height;
+      border-bottom: 1px solid darken(#eee, 40%);
+
+			@media(min-width: $screen-sm) {
+  			height: $navbar-height !important;
+  		}
+
+			&, & * {
+				color: $primary-color;
+				background: #eee;
+			}
+
+			&:hover {
+				&, & * {
+  				color: white;
+  				background: $primary-color;
+				}
+			}
+
+			.nav-item { // this is an <a> tag
+        height: 100%;
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				cursor: pointer;
+				line-height: $line-height-base;
+				text-decoration: none;
+				padding: $navbar-height / 4;
+			}
+  	}
+  }
+}
+
 .subnav {
 	width: 100%;
 	margin-bottom: 10px;
+  height: 50px;
 
 	.ico-btn {
+    @include grid(1/3, 1/1);
 		border-radius: 0px;
 		text-align: center;
 		background-color: white;
 		color: $primary-color;
-		@include grid(4);
+    text-align: center !important;
 
 		&:hover {
 			color: $primary-color;
@@ -33,7 +124,7 @@ $section-z-index: $gap-overlay-z-index + 1;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	
+
 	z-index: $gap-overlay-z-index;
 }
 
@@ -46,14 +137,14 @@ $section-z-index: $gap-overlay-z-index + 1;
 .content {
 	height: 100%;
 	position: relative;
-	
+
 	.content-section {
 		height: 100%;
 
 		.swiper-container {
 			height: 100%;
 		}
-	}	
+	}
 }
 
 .content-section {

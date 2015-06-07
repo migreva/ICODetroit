@@ -1,5 +1,7 @@
 /* Colors */
 /* Framework constants */
+/* End Framework constants */
+/* Navbar stuff */
 .jelly-animation {
   -webkit-animation: jelly 1000ms linear both;
   animation: jelly 1000ms linear both; }
@@ -180,7 +182,8 @@
   border-radius: 5px;
   display: block;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
   .ico-btn a.ico-btn, .ico-btn a.ico-btn:hover, .ico-btn a.ico-btn:focus {
     text-decoration: none !important;
     color: white; }
@@ -190,3 +193,5 @@
 .ico-btn-lg {
   font-size: 20px;
   padding: 5px; }
+
+/*# sourceMappingURL=/dist/js//include/buttons.css.map */
