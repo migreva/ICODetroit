@@ -713,7 +713,7 @@ body {
         display: table; }
       .navbar .nav-menu .nav-item-container:after {
         clear: both; }
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
         .navbar .nav-menu .nav-item-container {
           *zoom: 1;
           float: left;
@@ -769,7 +769,7 @@ body {
       display: table; }
     .subnav .ico-btn:after {
       clear: both; }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       .subnav .ico-btn {
         *zoom: 1;
         float: left;
