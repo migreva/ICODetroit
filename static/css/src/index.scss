@@ -19,7 +19,7 @@ $padding-sm: 100px;
 		background-color: $primary-color;
 		opacity: 0;
 		.title {
-			color: white;	
+			color: white;
 			text-align: center;
 			a, a:visited, a:hover, a:active {
 				text-decoration: none;
@@ -27,7 +27,7 @@ $padding-sm: 100px;
 			}
 		}
 		padding-top: $padding-sm;
-	
+
 		@media (min-width: $screen-xs-min) {
 			padding-top: $padding-md;
 		}
@@ -40,7 +40,7 @@ $padding-sm: 100px;
 
 			.menu-item {
 				background-origin: content-box;
-				background-repeat: no-repeat;			
+				background-repeat: no-repeat;
 				background-position: 0 0;
 				background-size: 100% 100%;
 				height: $padding-sm;
@@ -71,13 +71,13 @@ $padding-sm: 100px;
 
 				&.about {
 					background-image: url(/img/thought_bubble.png);
-					left: 0%;	
+					left: 0%;
 					top: 2;
-					
+
 					@media (min-width: $screen-sm-min)  {
-						left: 20%;	
+						left: 20%;
 					}
-					
+
 
 					.text {
 						top: 26%;
@@ -118,15 +118,15 @@ $padding-sm: 100px;
 	}
 
 	&#about {
-		
+
 		.title {
 			background: rgba(#ffffff, .5);
 			margin: 3% 0% 0% 3%;
 			color: $primary-color;
 			display: inline-block;
 			padding: 0 3%;
-			border-radius: 5px;	
-		
+			border-radius: 5px;
+
 			@media (min-width: $screen-md-min) {
 				margin-left: 7%;
 			}
@@ -157,10 +157,10 @@ $padding-sm: 100px;
 			color: white;
 			display: inline-block;
 			float: right;
-			margin: 3% 3% 0% 0%;	
+			margin: 3% 3% 0% 0%;
 			padding: 0 3%;
-			border-radius: 5px;	
-		
+			border-radius: 5px;
+
 			@media (min-width: $screen-md-min) {
 				margin-right: 7%;
 			}
@@ -192,7 +192,7 @@ $padding-sm: 100px;
 					img {
 						height: $contact-height;
 						width: 107px * 2;
-					}					
+					}
 			}
 			.image {
 
@@ -231,7 +231,7 @@ $padding-sm: 100px;
 		font-family: "chalkboard";
 
 		@media (min-width: $screen-xs-min) {
-			font-size: 8em;	
+			font-size: 8em;
 		}
 	}
 
@@ -239,7 +239,7 @@ $padding-sm: 100px;
 		font-size: 4em;
 
 		@media (min-width: $screen-xs-min) {
-			font-size: 7em;	
+			font-size: 7em;
 		}
 	}
 }
