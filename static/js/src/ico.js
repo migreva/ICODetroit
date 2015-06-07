@@ -1,8 +1,7 @@
-requirejs(["config"], function() {
-    requirejs(["jquery", "subpage", "swiper"], function($, subpage, Swiper) {
-      var mySwiper = new Swiper('.swiper-container', {
-        "prevButton": ".swiper-button-prev",
-        "nextButton": ".swiper-button-next"
-      }); 
-    });
+var supbage = require('./include/subpage');
+var swiper = require('swiper');
+
+var mySwiper = new Swiper('.swiper-container', {
+  "prevButton": ".swiper-button-prev",
+  "nextButton": ".swiper-button-next"
 });

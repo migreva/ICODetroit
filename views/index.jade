@@ -1,4 +1,4 @@
-extends ./base 
+extends ./base
 
 block head
   title IMAGINARIUM
@@ -7,10 +7,10 @@ block head
 block skrollr-images
   .parallax-image-wrapper.parallax-image-wrapper-100(data-anchor-target='#top + .gap', data-bottom-top='transform:translate3d(0px, 200%, 0px)', data-top-bottom='transform:translate3d(0px, 0%, 0px)')
       .parallax-image.parallax-image-100(style='background-image:url(img/river.jpg)', data-anchor-target='#top + .gap', data-bottom-top='transform: translate3d(0px, -80%, 0px);', data-top-bottom='transform: translate3d(0px, 80%, 0px);')
-    // the +/-80% translation can be adjusted to control the speed difference of the image
-  |   
-  .parallax-image-wrapper.parallax-image-wrapper-50(data-anchor-target='#contact + .gap', data-bottom-top='transform:translate3d(0px, 300%, 0px)', data-top-bottom='transform:translate3d(0px, 0%, 0px)')
-      .parallax-image.parallax-image-50(style='background-image:url(img/DetroitSkyline.jpg)', data-anchor-target='#contact + .gap', data-bottom-top='transform: translate3d(0px, -60%, 0px);', data-top-bottom='transform: translate3d(0px, 60%, 0px);')
+    //- // the +/-80% translation can be adjusted to control the speed difference of the image
+
+  //- .parallax-image-wrapper.parallax-image-wrapper-50(data-anchor-target='#contact + .gap', data-bottom-top='transform:translate3d(0px, 300%, 0px)', data-top-bottom='transform:translate3d(0px, 0%, 0px)')
+  //-     .parallax-image.parallax-image-50(style='background-image:url(img/DetroitSkyline.jpg)', data-anchor-target='#contact + .gap', data-bottom-top='transform: translate3d(0px, -60%, 0px);', data-top-bottom='transform: translate3d(0px, 60%, 0px);')
 
 
 block content
@@ -34,29 +34,29 @@ block content
       .title ABOUT
       .about-content The Imaginarium Creative Outreach is a Detroit non-profit organization with a devotion to expose every child in the city to their artistic passion.
       a.learn-more.col-md-3.col-sm-6.col-xs-6.ico-btn.ico-btn-lg.animation(href='/about') Learn More
-              
-  #contact.container-fluid.section
-    .title-container.row
-      .title CONTACT
-    .row 
-      .contact-person#kristian.container-fluid
-        .overlay
-        .row
-          .contact-info.col-md-5.col-sm-5.col-xs-12
-            .contact-label.row WHO
-            .info.row Kristian Chanel, Founder                       
-          .contact-info.email.col-md-offset-2.col-md-5.col-sm-offset-2.col-sm-2.col-xs-12
-            .contact-label.row EMAIL
-            a.info(href="mailto:icodetroit@gmail.com") icodetroit
-            a.info(href="mailto:icodetroit@gmail.com") @
-            a.info(href="mailto:icodetroit@gmail.com") gmail.com
 
-  .gap.gap-50(style='background-image:url(img/DetroitSkyline.jpg);')
+  //- #contact.container-fluid.section
+  //-   .title-container.row
+  //-     .title CONTACT
+  //-   .row
+  //-     .contact-person#kristian.container-fluid
+  //-       .overlay
+  //-       .row
+  //-         .contact-info.col-md-5.col-sm-5.col-xs-12
+  //-           .contact-label.row WHO
+  //-           .info.row Kristian Chanel, Founder
+  //-         .contact-info.email.col-md-offset-2.col-md-5.col-sm-offset-2.col-sm-2.col-xs-12
+  //-           .contact-label.row EMAIL
+  //-           a.info(href="mailto:icodetroit@gmail.com") icodetroit
+  //-           a.info(href="mailto:icodetroit@gmail.com") @
+  //-           a.info(href="mailto:icodetroit@gmail.com") gmail.com
+
+  //- .gap.gap-50(style='background-image:url(img/DetroitSkyline.jpg);')
   script(src='/js/dist/index.js', type='text/javascript')
 
 
 
 
-          
-          
+
+
 

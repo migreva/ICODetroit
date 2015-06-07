@@ -5,10 +5,11 @@ block vars
 
 block css
   link(rel='stylesheet', type='text/css', href='css/dist/ico.css')
+  link(rel='stylesheet', type='text/css', href='swiper/dist/css/swiper.min.css')
 
 block subnav
   a.ico-btn.ico-btn-lg.active(href='#tutoring-schedule') TUTORING SCHEDULE
-  a.ico-btn.ico-btn-lg(href='#learning-tools') LEARNING TOOLS 
+  a.ico-btn.ico-btn-lg(href='#learning-tools') LEARNING TOOLS
   a.ico-btn.ico-btn-lg(href="#gallery") GALLERY
 
 block content
@@ -16,11 +17,11 @@ block content
     .swiper-container
       .swiper-wrapper
         // Slides
-        .swiper-slide 
+        .swiper-slide
           .event
             h2.event-title Craft Day
             h4.event-subtitle Craft Day at 5629 Gallery
-            .address 
+            .address
               .street 5629 Michigan Ave.
               .city Detroit, MI 48210
         .swiper-slide
@@ -28,7 +29,7 @@ block content
             h2.event-title Tutoring Day
             h4.event-subtitle Tutoring Day at Central Alliance Church
             .address
-              .street 616 West Hancock 
+              .street 616 West Hancock
               .city Detroit, MI 48201
         .swiper-slide
           .event
