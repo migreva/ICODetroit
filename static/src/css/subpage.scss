@@ -1,0 +1,64 @@
+@import 'lib/base';
+
+$projects-color: $primary-color;
+$blog-color: $success-color;
+$calendar-color: $warning-color;
+
+body {
+  background: #eee;
+
+  &.projects {
+    .title {
+      color: $projects-color;
+    }
+
+    .footer {
+      background-color: $projects-color;
+    }
+  }
+
+  &.calendar {
+    .title {
+      color: $calendar-color;
+    }
+
+    .footer {
+      background-color: $calendar-color;
+    }
+  }
+
+  &.blog {
+    .title {
+      color: $blog-color;
+    }
+
+    .footer {
+      background-color: $blog-color;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+
+  .page-subtitle {
+    text-transform: lowercase;
+  }
+}
+
+.footer {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+  line-height: 45px;
+  color: white;
+
+  .page-name {
+    text-transform: lowercase;
+    font-size: 25px;
+    font-family: 'KD';
+  }
+}

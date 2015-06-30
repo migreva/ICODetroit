@@ -1,0 +1,28 @@
+@import 'fonts';
+
+$primary-color: #9FD9F0; // light blue
+$secondary-color: #E5A33A; // orange
+$success-color: #74C19E;
+$warning-color: $secondary-color;
+
+$screen-md: 992px;
+$screen-sm: 768px;
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-family: 'Claire Hand';
+  font-weight: bold;
+}
+
+.page-subtitle {
+  font-family: 'KD';
+}
+
+.page-title, .page-subtitle {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 40px;
+}
