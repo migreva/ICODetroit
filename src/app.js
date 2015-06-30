@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '../static')));
 router(app);
 
 if (!config.PROD) {
-  let server = app.listen(3000, function () {
+  let server = app.listen(3001, function () {
 
     let host = server.address().address;
     let port = server.address().port;
