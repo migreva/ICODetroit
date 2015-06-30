@@ -32,7 +32,7 @@ app.use(_express2['default']['static'](_path2['default'].join(__dirname, '../sta
 
 if (!_config2['default'].PROD) {
   (function () {
-    var server = app.listen(3000, function () {
+    var server = app.listen(3001, function () {
 
       var host = server.address().address;
       var port = server.address().port;
