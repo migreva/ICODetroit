@@ -1,0 +1,18 @@
+html
+
+  head
+    title=title + ' - ICO Detroit'
+
+    link(href='/dist/css/subpage.css' rel='stylesheet')
+  body(class='#{title.toLowerCase()}')
+    .title
+      .page-title Imaginarium
+      .page-subtitle=title
+
+    block content
+
+    block footer
+      .footer
+        .page-name=title
+
+    block js

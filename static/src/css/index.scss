@@ -1,0 +1,51 @@
+@import 'lib/base';
+
+body {
+  background-image: url(/img/icopicture.png);
+  background-position: 0% 75%;
+}
+
+.title {
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 35%;
+
+  @media (max-width: $screen-sm) {
+    text-align: center;
+  }
+}
+
+.site-nav {
+  @media (max-width: $screen-sm) {
+    margin-top: 20px;
+    border-top: 1px solid white;
+  }
+
+  .nav-item {
+    text-transform: lowercase;
+    text-decoration: none;
+    font-family: 'KD';
+    margin-right: 30px;
+    font-size: 30px;
+
+    @media (max-width: $screen-sm) {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    &.projects {
+      color: $primary-color;
+    }
+    &.calendar {
+      color: $secondary-color;
+    }
+    &.about {
+      color: white;
+    }
+    &.blog {
+      color: $success-color;
+    }
+  }
+}

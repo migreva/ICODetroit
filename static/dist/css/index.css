@@ -1,0 +1,74 @@
+/** Claire Hand **/
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: bold;
+  src: url(../../../fonts/ClaireHand/ClaireHandBold.ttf); }
+
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: normal;
+  src: url(../../../fonts/ClaireHand/ClaireHandRegular.tff); }
+
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: lighter;
+  src: url(../../../fonts/ClaireHand/ClaireHandLight.tff); }
+
+/** KD Always a Good Time **/
+@font-face {
+  font-family: 'KD';
+  font-weight: normal;
+  src: url(../../../fonts/KGAlwaysAGoodTime/KGAlwaysAGoodTime.ttf); }
+
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+.page-title {
+  font-family: 'Claire Hand';
+  font-weight: bold; }
+
+.page-subtitle {
+  font-family: 'KD'; }
+
+.page-title, .page-subtitle {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 40px; }
+
+body {
+  background-image: url(/img/icopicture.png);
+  background-position: 0% 75%; }
+
+.title {
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 35%; }
+  @media (max-width: 768px) {
+    .title {
+      text-align: center; } }
+
+@media (max-width: 768px) {
+  .site-nav {
+    margin-top: 20px;
+    border-top: 1px solid white; } }
+
+.site-nav .nav-item {
+  text-transform: lowercase;
+  text-decoration: none;
+  font-family: 'KD';
+  margin-right: 30px;
+  font-size: 30px; }
+  @media (max-width: 768px) {
+    .site-nav .nav-item {
+      display: block;
+      width: 100%;
+      text-align: center; } }
+  .site-nav .nav-item.projects {
+    color: #9FD9F0; }
+  .site-nav .nav-item.calendar {
+    color: #E5A33A; }
+  .site-nav .nav-item.about {
+    color: white; }
+  .site-nav .nav-item.blog {
+    color: #74C19E; }

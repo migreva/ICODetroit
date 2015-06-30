@@ -1,5 +1,14 @@
 html
   head
     title= title
+
+    link(href='/dist/css/index.css', rel='stylesheet')
   body
-    .h1 Hello World
+    .title
+      .page-title Imaginarium
+      .page-subtitle Creative Outreach
+      .site-nav
+        a.nav-item.projects(href='/projects/') Projects
+        a.nav-item.calendar(href='/calendar/') Calendar
+        a.nav-item.about(href='/about/') About + Contact
+        a.nav-item.blog(href='/blog/') Blog
