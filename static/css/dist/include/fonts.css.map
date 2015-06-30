@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["include/fonts.css"],"sourcesContent":["@font-face {\n  font-family: \"chalkboard\";\n  src: url(\"../fonts/chalkboard/chalkboard.otf\") format(\"opentype\"); }\n"],"file":"include/fonts.css","sourceRoot":"/src"}

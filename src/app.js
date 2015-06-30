@@ -5,17 +5,16 @@ var config = require('./config');
 var pages = require('./pages/pages');
 
 // Template language
-app.set('views', path.join(__dirname, 'views'));
+app.set('../views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // Static file path
 app.use(express.static(path.join(__dirname, 'static')));
-app.use(express.static(path.join(__dirname, 'node_modules')));
 
 pages(app);
 
 if (!config.PROD) {
-  var server = app.listen(3001, function () {
+  var server = app.listen(3000, function () {
 
     var host = server.address().address;
     var port = server.address().port;
