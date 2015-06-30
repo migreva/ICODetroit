@@ -3,15 +3,18 @@
 body {
   background-image: url(/img/icopicture.png);
   background-position: 0% 75%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {
   color: white;
   width: 80%;
   margin: 0 auto;
-  padding-top: 35%;
+  padding-top: 20%;
 
   @media (max-width: $screen-sm) {
+    padding-top: 35%;
     text-align: center;
   }
 }
