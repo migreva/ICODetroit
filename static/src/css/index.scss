@@ -31,6 +31,8 @@ body {
     font-family: 'KD';
     margin-right: 30px;
     font-size: 30px;
+    padding: 10px;
+    margin: 10px 5px;
 
     @media (max-width: $screen-sm) {
       display: block;
@@ -41,18 +43,34 @@ body {
     &.projects {
       background: $primary-color;
       color: white;
+
+      &:hover {
+        background: darken($primary-color, 20%);
+      }
     }
     &.calendar {
       background: $secondary-color;
       color: white;
+
+      &:hover {
+        background: darken($secondary-color, 20%);
+      }
     }
     &.about {
       background: $about-color;
       color: white;
+
+      &:hover {
+        background: darken($about-color, 20%);
+      }
     }
     &.blog {
       background: $success-color;
       color: white;
+
+      &:hover {
+        background: darken($success-color, 20%);
+      }
     }
   }
 }
