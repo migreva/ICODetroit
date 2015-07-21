@@ -1,8 +1,10 @@
 import Router from 'express';
+import Blogger from '../lib/blogger';
 
 let router = Router();
 
-module.exports = function(app) {
+let init = function(app) {
+  /* Basic HTML Routes */
   router.get('/', function(req, res) {
     res.render('index', {
       title: 'Home - ICO Detroit'
@@ -34,4 +36,11 @@ module.exports = function(app) {
   });
 
   app.use(router);
+
+  /* Blogger stuff */
+  let b = new Blogger(app);
+}
+
+module.exports = {
+  init
 }

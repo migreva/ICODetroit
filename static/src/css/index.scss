@@ -39,16 +39,20 @@ body {
     }
 
     &.projects {
-      color: $primary-color;
+      background: $primary-color;
+      color: white;
     }
     &.calendar {
-      color: $secondary-color;
+      background: $secondary-color;
+      color: white;
     }
     &.about {
+      background: $about-color;
       color: white;
     }
     &.blog {
-      color: $success-color;
+      background: $success-color;
+      color: white;
     }
   }
 }
