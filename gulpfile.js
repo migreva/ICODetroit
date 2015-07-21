@@ -46,7 +46,10 @@ gulp.task('sass', function () {
   paths = paths.concat(bourbon.includePaths);
 
   gulp.src(sassFiles)
-    .pipe(sass({ includePaths: paths }).on('error', sass.logError))
+    .pipe(sass({
+      includePaths: paths
+    })
+    .on('error', sass.logError))
     .pipe(gulp.dest(cssDist));
 });
 
@@ -184,22 +187,5 @@ function babelBundle() {
     .pipe(gulp.dest(dist))
     .on('end', function() {
       gutil.log('Done babelifying');
-    });
-}
-
-function bundleSass() {
-
-  gutil.log('Compiling SASS files ...');
-
-  var paths = ['./node_modules/'];
-  paths.concat(bourbon.includePaths);
-  console.log(paths);
-
-  return gulp.src(cssFiles)
-    .pipe(plumber(gutil.log))
-    .pipe(sass({ includePaths: paths }))
-    .pipe(gulp.dest(cssDist))
-    .on('end', function() {
-      gutil.log('Done compiling SASS files');
     });
 }

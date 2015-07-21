@@ -10,23 +10,32 @@ class BlogPostJsx extends React.Component {
 
   parseArticle(article) {
     this.article = article;
-    this.published = article.published;
-    this.content = marked(article.content.toString(), {sanitize: true});
+    this.content = article.content;//marked(article.content.toString(), {sanitize: true});
     this.title = article.title;
     this.author = article.author;
+    this.link = article.selfLink;
+    this.author = article.author.displayName;
+
+    // Format the date
+    let date = new Date(article.published);
+    this.published = `${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`;
   }
 
   render() {
     return (
       <div className='blog-post'>
-        <div className='date'>
-          { this.published }
+        <div className='header'>
+          <div className='title'>
+            <a href={ this.link }>{ this.title }</a>
+          </div>
+          <div className='date'>
+            <a href={ this.link }>{ this.published }</a>
+          </div>
         </div>
-        <div className='title'>
-          { this.title }
+        <div className='author'>
+          By { this.author }
         </div>
-        <div className='content' dangerouslySetInnerHTML={{__html: this.content}}>
-        </div>
+        <div className='content' dangerouslySetInnerHTML={{__html: this.content}}/>
       </div>
     )
   }
