@@ -36,7 +36,8 @@
   font-size: 40px; }
 
 body {
-  background: #eee; }
+  background: #eee;
+  margin-bottom: 60px; }
   body.projects .title {
     color: #9FD9F0; }
   body.projects .footer {

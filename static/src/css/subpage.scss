@@ -4,8 +4,11 @@ $projects-color: $primary-color;
 $blog-color: $success-color;
 $calendar-color: $warning-color;
 
+$footer-height: 60px;
+
 body {
   background: #eee;
+  margin-bottom: $footer-height;
 
   &.projects {
     .title {
@@ -48,7 +51,7 @@ body {
 
 .footer {
   position: fixed;
-  height: 60px;
+  height: $footer-height;
   width: 100%;
   padding: 10px;
   bottom: 0;
