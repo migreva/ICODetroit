@@ -6,9 +6,14 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _libBlogger = require('../lib/blogger');
+
+var _libBlogger2 = _interopRequireDefault(_libBlogger);
+
 var router = (0, _express2['default'])();
 
-module.exports = function (app) {
+var init = function init(app) {
+  /* Basic HTML Routes */
   router.get('/', function (req, res) {
     res.render('index', {
       title: 'Home - ICO Detroit'
@@ -40,4 +45,11 @@ module.exports = function (app) {
   });
 
   app.use(router);
+
+  /* Blogger stuff */
+  var b = new _libBlogger2['default'](app);
+};
+
+module.exports = {
+  init: init
 };

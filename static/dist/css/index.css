@@ -68,10 +68,14 @@ body {
       width: 100%;
       text-align: center; } }
   .site-nav .nav-item.projects {
-    color: #9FD9F0; }
+    background: #9FD9F0;
+    color: white; }
   .site-nav .nav-item.calendar {
-    color: #E5A33A; }
+    background: #E5A33A;
+    color: white; }
   .site-nav .nav-item.about {
+    background: #A8B4F3;
     color: white; }
   .site-nav .nav-item.blog {
-    color: #74C19E; }
+    background: #74C19E;
+    color: white; }

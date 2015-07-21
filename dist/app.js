@@ -2,9 +2,9 @@
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
 
-var _express = require('express');
+var _expressIo = require('express.io');
 
-var _express2 = _interopRequireDefault(_express);
+var _expressIo2 = _interopRequireDefault(_expressIo);
 
 var _path = require('path');
 
@@ -18,7 +18,11 @@ var _routesRouter = require('./routes/router');
 
 var _routesRouter2 = _interopRequireDefault(_routesRouter);
 
-var app = (0, _express2['default'])();
+var _routesSockets = require('./routes/sockets');
+
+var _routesSockets2 = _interopRequireDefault(_routesSockets);
+
+var app = (0, _expressIo2['default'])();
 
 // Template language
 app.set('views', _path2['default'].join(__dirname, '../views'));
@@ -26,9 +30,10 @@ app.set('view engine', 'jade');
 
 // Static file path
 console.log(_path2['default'].join(__dirname, '../static'));
-app.use(_express2['default']['static'](_path2['default'].join(__dirname, '../static')));
+app.use(_expressIo2['default']['static'](_path2['default'].join(__dirname, '../static')));
 
-(0, _routesRouter2['default'])(app);
+_routesRouter2['default'].init(app);
+// sockets.init(app);
 
 if (!_config2['default'].PROD) {
   (function () {
