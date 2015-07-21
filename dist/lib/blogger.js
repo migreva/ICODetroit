@@ -111,7 +111,7 @@ var Blogger = (function () {
 
           case 9:
 
-            setTimeout(this.bloggerLoop.call(this), this.timeout);
+            setTimeout(this.bloggerLoop, this.timeout);
 
           case 10:
           case 'end':
@@ -127,6 +127,7 @@ var Blogger = (function () {
       return new _Promise(function (resolve, reject) {
 
         var url = _this2.getUrl('posts');
+        console.log('Fetching ' + url);
         _request2['default'].get(url, function (err, resp, body) {
           if (err) reject(err);
 
