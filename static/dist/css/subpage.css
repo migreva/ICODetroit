@@ -52,7 +52,9 @@ body {
     background-color: #74C19E; }
 
 .title {
-  text-align: center; }
+  text-align: center;
+  width: 100%;
+  display: block; }
   .title .page-subtitle {
     text-transform: lowercase; }
 

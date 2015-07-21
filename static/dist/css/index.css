@@ -61,7 +61,9 @@ body {
   text-decoration: none;
   font-family: 'KD';
   margin-right: 30px;
-  font-size: 30px; }
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px 5px; }
   @media (max-width: 768px) {
     .site-nav .nav-item {
       display: block;
@@ -70,12 +72,20 @@ body {
   .site-nav .nav-item.projects {
     background: #9FD9F0;
     color: white; }
+    .site-nav .nav-item.projects:hover {
+      background: #47b6e2; }
   .site-nav .nav-item.calendar {
     background: #E5A33A;
     color: white; }
+    .site-nav .nav-item.calendar:hover {
+      background: #a36d16; }
   .site-nav .nav-item.about {
     background: #A8B4F3;
     color: white; }
+    .site-nav .nav-item.about:hover {
+      background: #4e67e7; }
   .site-nav .nav-item.blog {
     background: #74C19E;
     color: white; }
+    .site-nav .nav-item.blog:hover {
+      background: #408f6b; }
