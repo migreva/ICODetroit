@@ -53,13 +53,14 @@ export default class Blogger {
       console.error(e);
     }
 
-    setTimeout(this.bloggerLoop.call(this), this.timeout)
+    setTimeout(this.bloggerLoop, this.timeout)
   }
 
   fetchArticles() {
     return new Promise((resolve, reject) => {
 
       let url = this.getUrl('posts');
+      console.log(`Fetching ${url}`);
       request.get(url, (err, resp, body) => {
         if (err) reject(err);
 

@@ -39,7 +39,7 @@ var sassFiles = cssRoot + '**/*.scss';
 var jsRoot = STATIC.srcRoot + 'js/';
 var jsDist = STATIC.distRoot + 'js';
 var jsFiles = jsRoot + '**/*.js';
-var jsBundle = ['migreva.js'];
+var jsBundle = ['blog/index.js'];
 
 gulp.task('sass', function () {
   var paths = ['./node_modules/', './static/fonts'];
@@ -61,12 +61,14 @@ gulp.task('browserify', function(cb) {
 
   each(jsBundle, function(fname) {
     var filePath = jsRoot + fname;
+    var fileDest = fname.split('/').length > 1 ? fname.split('/').slice(0, -1).join('/') : '';
+    fileDest = jsDist + '/' + fileDest;
     gulp.src(filePath)
         .pipe(plumber(gutil.log))
         .pipe(tap(bundleJs))
-        .pipe(gulp.dest(jsDist))
+        .pipe(gulp.dest(fileDest))
         .on('end', function() {
-          gutil.log('Browserify finished creating: ' + filePath);
+          gutil.log('Browserify finished creating: ' + fileDest);
           // if (typeof bcb === 'function') bcb();
         });
   });
@@ -108,16 +110,18 @@ gulp.task('watch', function() {
   gutil.log('Watching JS files ...');
   gulp.watch(jsFiles, function() {
     each(jsBundle, function(fname) {
-      var filePath = jsRoot + fname;
+    var filePath = jsRoot + fname;
+      var fileDest = fname.split('/').length > 1 ? fname.split('/').slice(0, -1).join('/') : '';
+      fileDest = jsDist + '/' + fileDest;
       gutil.log('Compiling ' + filePath + ' ...');
-      return gulp.src(filePath)
-        .pipe(plumber(gutil.log))
-        .pipe(tap(bundleJs))
-        .pipe(gulp.dest(jsDist))
-        .on('end', function() {
-          gutil.log('Browserify finished creating: ' + filePath);
-          // if (typeof bcb === 'function') bcb();
-        });
+      gulp.src(filePath)
+          .pipe(plumber(gutil.log))
+          .pipe(tap(bundleJs))
+          .pipe(gulp.dest(fileDest))
+          .on('end', function() {
+            gutil.log('Browserify finished creating: ' + fileDest);
+            // if (typeof bcb === 'function') bcb();
+          });
     });
   })
 
@@ -139,7 +143,10 @@ function bundleJs(file, bcb) {
   }
 
   gutil.log('Browserify is compiling ' + file.path);
-  var b = browserify(file.path, { debug: true })
+  var b = browserify(file.path, {
+      debug: true,
+      fullPaths: true,
+    })
     .transform(babelify.configure({ stage: 0, optional: ['runtime'] }))
     // .transform(pkgify, {
     //   packages: {
