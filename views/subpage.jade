@@ -5,6 +5,7 @@ html
     include components/meta
 
     link(href='/dist/css/subpage.css' rel='stylesheet')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     block css
   body(class='#{title.toLowerCase()}')
     a.title(href='/')
@@ -15,6 +16,7 @@ html
 
     block footer
       .footer
-        .page-name=title
+         #navbar
 
     block js
+      script(src='/dist/js/lib/subpage.js')
