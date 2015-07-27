@@ -113,7 +113,7 @@ gulp.task('watch', function() {
   gutil.log('Watching JS files ...');
   gulp.watch(jsFiles, function() {
     each(jsBundle, function(fname) {
-    var filePath = jsRoot + fname;
+      var filePath = jsRoot + fname;
       var fileDest = fname.split('/').length > 1 ? fname.split('/').slice(0, -1).join('/') : '';
       fileDest = jsDist + '/' + fileDest;
       gutil.log('Compiling ' + filePath + ' ...');

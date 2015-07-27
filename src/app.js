@@ -1,6 +1,6 @@
 import express from 'express.io';
 import path from 'path';
-import config from './config';
+import config from '../config';
 import router from './routes/router';
 import sockets from './routes/sockets';
 

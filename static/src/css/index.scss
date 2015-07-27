@@ -12,14 +12,22 @@ body {
   width: 80%;
   margin: 0 auto;
   padding-top: 20%;
+  margin-bottom: 25px;
 
   @media (max-width: $screen-sm) {
     padding-top: 35%;
     text-align: center;
   }
+
+  .page-title {
+    letter-spacing: 10px;
+  }
 }
 
 .site-nav {
+  width: 80%;
+  margin: 0 auto;
+
   @media (max-width: $screen-sm) {
     margin-top: 20px;
     border-top: 1px solid white;
@@ -33,6 +41,7 @@ body {
     font-size: 30px;
     padding: 10px;
     margin: 10px 5px;
+    border-radius: 10px;
 
     @media (max-width: $screen-sm) {
       display: block;

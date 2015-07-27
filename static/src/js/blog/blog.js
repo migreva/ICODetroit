@@ -1,6 +1,7 @@
 import request from 'request';
 import BlogPost from './jsx/blog-post';
 import React from 'react';
+import Subpage from '../lib/subpage.js';
 
 function init() {
 
