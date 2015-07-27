@@ -39,7 +39,7 @@ var sassFiles = cssRoot + '**/*.scss';
 var jsRoot = STATIC.srcRoot + 'js/';
 var jsDist = STATIC.distRoot + 'js';
 var jsFiles = jsRoot + '**/*.js';
-var jsBundle = ['blog/index.js'];
+  var jsBundle = ['blog/index.js', 'lib/subpage.js'];
 
 gulp.task('sass', function () {
   var paths = ['./node_modules/', './static/fonts'];
@@ -134,7 +134,7 @@ gulp.task('watch', function() {
   gulp.watch(sassFiles, ['sass']);
 });
 
-gulp.task('default', ['babel', /*'browserify',*/ 'sass']);
+gulp.task('default', ['babel', 'browserify', 'sass']);
 
 
 // https://gist.github.com/RnbWd/2456ef5ce71a106addee
