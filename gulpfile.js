@@ -39,7 +39,7 @@ var sassFiles = cssRoot + '**/*.scss';
 var jsRoot = STATIC.srcRoot + 'js/';
 var jsDist = STATIC.distRoot + 'js';
 var jsFiles = jsRoot + '**/*.js';
-  var jsBundle = ['blog/index.js', 'lib/subpage.js'];
+var jsBundle = ['blog/index.js', 'lib/subpage.js', 'projects/projects.js'];
 
 gulp.task('sass', function () {
   var paths = ['./node_modules/', './static/fonts'];

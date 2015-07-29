@@ -1,5 +1,5 @@
 import request from 'request';
-import BlogPost from './jsx/blog-post';
+import Blog from './jsx/blog';
 import React from 'react';
 import Subpage from '../lib/subpage.js';
 
@@ -21,19 +21,12 @@ function init() {
       console.log('No blog items found');
     }
 
-    let blogPosts = document.getElementById('blog-posts');
-    for (let i = 0; i < body.items.length; i++) {
-      let blogPost = body.items[i];
+    let blogPosts = React.render(
+      <Blog posts= { body.items }/>,
+      document.getElementById('blog-posts')
+    )
 
-      let element = document.createElement('div');
-      element.id = blogPost.id;
-      blogPosts.appendChild(element);
 
-      React.render(
-        <BlogPost article={ blogPost }/>,
-        element
-      )
-    }
   });
 }
 
