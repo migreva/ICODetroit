@@ -1,24 +1,24 @@
 import React from 'react';
 import marked from 'marked';
 
-class BlogPostJsx extends React.Component {
+export default class BlogPostJsx extends React.Component {
   constructor(args) {
     super(args);
 
-    this.parseArticle(args.article);
+    this.parseArticle(args.post);
   }
 
-  parseArticle(article) {
-    this.article = article;
-    this.content = article.content;//marked(article.content.toString(), {sanitize: true});
-    this.title = article.title;
-    this.author = article.author;
-    this.url = article.url;
-    this.author = article.author.displayName;
-    this.labels = article.labels;
+  parseArticle(post) {
+    this.post = post;
+    this.content = post.content;//marked(post.content.toString(), {sanitize: true});
+    this.title = post.title;
+    this.author = post.author;
+    this.url = post.url;
+    this.author = post.author.displayName;
+    this.labels = post.labels;
 
     // Format the date
-    let date = new Date(article.published);
+    let date = new Date(post.published);
     this.published = `${date.getMonth()}.${date.getDate()}.${String(date.getFullYear()).slice(2, 4)}`;
   }
 
@@ -51,5 +51,3 @@ class BlogPostJsx extends React.Component {
     )
   }
 }
-
-module.exports = BlogPostJsx

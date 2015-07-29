@@ -1,0 +1,141 @@
+@import 'jeet/scss/jeet/index';
+@import './lib/base';
+
+$see-more-height: 30px;
+
+
+body {
+  margin-left: 0;
+  margin-right: 0;
+
+  &.project-summary-shown {
+    overflow: hidden;
+  }
+}
+
+.projects {
+  width: 100%;
+  margin-top: 20px;
+
+  .project {
+    width: 100%;
+    margin-bottom: 50px;
+    min-height: 500px;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    padding-top: 30px;
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background: black;
+      opacity: .3;
+    }
+
+    &.board-and-beautify {
+     background-image: url(/img/ubuntuhouse.jpg);
+    }
+
+    &.brother-bear {
+     background-image: url(/img/brotherbear.jpg);
+    }
+
+    .project-title {
+      width: 100%;
+      text-align: center;
+      font-size: 50px;
+      color: white;
+      font-family: 'Claire Hand';
+    }
+  }
+}
+
+.see-more {
+  width: 50%;
+  margin: 0 25%;
+  background: $projects-color;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
+  height: $see-more-height;
+  line-height: $see-more-height;
+  font-family: 'KD';
+  text-transform: lowercase;
+
+  transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+
+  &:hover {
+
+    background: darken($projects-color, 30%);
+/*    height: $see-more-height * 2;*/
+    /*line-height: $see-more-height * 2;*/
+  }
+}
+
+
+.summary-container {
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(black, .3);
+
+  .close-summary {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    right: 12%;
+    top: 12%;
+  }
+
+  .project-summary {
+    background-color: $projects-color;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 20px;
+    min-height: 70%;
+    overflow-y: scroll;
+    border-radius: 10px;
+
+    .title {
+      color: white;
+      font-family: 'Claire Hand';
+      font-size: 40px;
+    }
+
+    p {
+      color: white;
+    }
+
+    .write-up {
+
+      @media (max-width: $screen-sm) {
+        @include column(1/1);
+      }
+    }
+
+    &.board-and-beautify {
+      .write-up, .kickstarter-embed  {
+        @media (min-width: $screen-sm) {
+          @include column(1/2);
+        }
+      }
+    }
+  }
+}
+

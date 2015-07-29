@@ -2,3 +2,4 @@ node_modules/
 config.js
 dist/
 static/dist/
+*.swp

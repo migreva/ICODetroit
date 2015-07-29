@@ -57,10 +57,9 @@ body {
   position: fixed;
   height: $footer-height;
   width: 100%;
-  padding: 10px;
   bottom: 0;
   left: 0;
-  line-height: 45px;
+  line-height: $footer-line-height;
   color: white;
 
   .page-name {
@@ -78,21 +77,32 @@ body {
   font-family: 'Claire Hand';
   font-weight: bold;
   background: inherit;
+  line-height: $footer-height;
 
   @media (min-width: $screen-sm) {
     @include column(1/3);
   }
 
-
-
   a {
     text-decoration: none;
     color: white;
   }
+}
 
+.footer-extra {
+  display: none;
+  height: $footer-height;
+  line-height: $footer-height;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    @include column(2/3);
+  }
 }
 
 .navbar {
+  padding: 10px;
+
   &.hidden {
     .nav-item {
       display: none;
