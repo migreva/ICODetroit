@@ -35,6 +35,18 @@ let init = function(app) {
     });
   });
 
+  router.get('/get-involved/', function(req, res) {
+    res.render('get-involved', {
+      title: 'get-involved'
+    });
+  });
+
+  router.get('/about/', function(req, res) {
+    res.render('about', {
+      title: 'about'
+    });
+  })
+
   app.use(router);
 
   /* Blogger stuff */

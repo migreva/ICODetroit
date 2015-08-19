@@ -1,9 +1,6 @@
 @import 'lib/base';
 @import 'jeet/scss/jeet/index.scss';
 
-
-$footer-height: 60px;
-
 @mixin subpage-body($page-type, $color) {
 
   &.#{$page-type} {
@@ -23,6 +20,7 @@ $footer-height: 60px;
 
     .nav-item {
       background: $color;
+
     }
   }
 }
@@ -31,6 +29,8 @@ body {
   margin-bottom: $footer-height;
 
   @include subpage-body('projects', $projects-color);
+
+  @include subpage-body('get-involved', $projects-color);
 
   @include subpage-body('calendar', $calendar-color);
 
@@ -93,10 +93,18 @@ body {
   display: none;
   height: $footer-height;
   line-height: $footer-height;
+  font-family: 'Claire Hand';
 
   @media (min-width: $screen-sm) {
     display: block;
     @include column(2/3);
+  }
+
+  .nav-item {
+    float: right;
+    display: inline-block;
+    text-decoration: none;
+    width: 40%;
   }
 }
 
@@ -141,19 +149,27 @@ body {
     border: 1px solid white;
 
     &.projects {
-      background: $projects-color !important;
+      background: $projects-color;
+
+      @include darken-on-hover($projects-color);
     }
 
     &.calendar {
-      background: $calendar-color !important;
+      background: $calendar-color;
+
+      @include darken-on-hover($calendar-color);
     }
 
     &.blog {
-      background: $blog-color !important;
+      background: $blog-color;
+
+      @include darken-on-hover($blog-color);
     }
 
     &.about {
-      background: $about-color !important;
+      background: $about-color;
+
+      @include darken-on-hover($about-color);
     }
   }
 }

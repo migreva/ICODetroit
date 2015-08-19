@@ -34,7 +34,11 @@ class Projects extends React.Component {
     });
   }
 
-  closeSummary() {
+  closeSummary(e) {
+    if (!/summary-container|close-summary/.test(e.target.classList)) {
+      return;
+    }
+
     document.getElementsByTagName('body')[0].classList.remove('project-summary-shown');
     this.setState({
       projectShow: false,
@@ -63,9 +67,8 @@ class Projects extends React.Component {
 
     let jsx = projectInfo[this.state.projectName].jsx;
     return (
-      <div className='summary-container'>
-        <i className='fa fa-times close-summary' onClick={ this.closeSummary.bind(this) }></i>
-        { React.createElement(jsx, {}) }
+      <div className='summary-container' onClick={ this.closeSummary.bind(this) }>
+        { React.createElement(jsx, { callback: this.closeSummary.bind(this) }) }
       </div>
     )
   }

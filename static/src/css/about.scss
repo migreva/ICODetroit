@@ -1,0 +1,61 @@
+@import './subpage.scss';
+
+.content {
+  margin-top: 10%;
+
+  @media (max-width: $screen-sm) {
+    margin-top: 0%;
+  }
+}
+
+.write-up, .contact-info {
+  width: 50%;
+  font-family: $paragraph-font;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.write-up {
+  float: left;
+  text-align: right;
+
+  @media (max-width: $screen-sm) {
+    text-align: center;
+  }
+}
+
+.contact-info {
+  float: right;
+  text-align: center;
+  font-family: 'Claire Hand';
+  margin-top: 5%;
+
+  p {
+    font-size: 50px;
+    width: 75%;
+    margin: 0 auto;
+    color: $about-color;
+  }
+
+  .get-in-touch {
+    width: 50%;
+    margin: 0 auto;
+    background: $projects-color;
+    color: white;
+    font-family: 'Claire Hand';
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 40px;
+    line-height: 40px;
+    padding: 5px;
+    padding-top: 10px;
+    border-radius: 10px;
+
+    @include darken-on-hover($projects-color);
+
+  }
+}

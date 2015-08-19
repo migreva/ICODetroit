@@ -91,25 +91,26 @@ body {
   height: 100%;
   width: 100%;
   background: rgba(black, .3);
+  overflow: auto;
 
   .close-summary {
     position: absolute;
     color: white;
     font-size: 30px;
     cursor: pointer;
-    right: 12%;
-    top: 12%;
+    right: 4%;
+    top: 2%;
+    z-index: 100;
   }
 
   .project-summary {
     background-color: $projects-color;
     position: relative;
     width: 80%;
-    margin: 0 auto;
-    margin-top: 10%;
+    margin: 5% auto;
+    margin-bottom: $footer-height * 2;
     padding: 20px;
     min-height: 70%;
-    overflow-y: scroll;
     border-radius: 10px;
 
     .title {
@@ -123,6 +124,7 @@ body {
     }
 
     .write-up {
+      font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 
       @media (max-width: $screen-sm) {
         @include column(1/1);
@@ -135,7 +137,39 @@ body {
           @include column(1/2);
         }
       }
+
+      .kickstarter-embed {
+        text-align: center;
+      }
+    }
+
+    &.brother-bear {
+      .write-up, .image {
+        @media (min-width: $screen-sm) {
+          @include column(1/2);
+        }
+      }
+    }
+
+    .image {
+      text-align: center !important;
+      img {
+        width: 50%;
+
+      }
     }
   }
 }
 
+.footer-links {
+  position: relative;
+  font-family: 'Claire Hand';
+  width: 100%;
+
+  .nav-item {
+    float: right;
+    display: inline-block;
+    text-decoration: none;
+    width: 40%;
+  }
+}
