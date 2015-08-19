@@ -37,7 +37,7 @@ let init = function(app) {
 
   router.get('/get-involved/', function(req, res) {
     res.render('get-involved', {
-      title: 'get-involved'
+      title: 'Get Involved'
     });
   });
 
