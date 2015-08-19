@@ -53,11 +53,12 @@ export default class Navbar extends React.Component {
       <div className={ navState }>
         <div className='menu-toggle' onClick={ this.toggleMenu.bind(this) }>Menu <i className='fa fa-caret-up'></i><i className='fa fa-caret-down'></i></div>
         <div className='pages'>
-          <a href='/blog/' className='nav-item blog'>blog</a>
-          <a href='/about/' className='nav-item about'>about</a>
-          <a href='/calendar/' className='nav-item calendar'>calendar</a>
-          <a href='/projects/' className='nav-item projects'>projects</a>
-          <a href='/' className='nav-item home'>home</a>
+          <a href='/blog/' className='nav-item blog'>Blog</a>
+          <a href='/about/' className='nav-item about'>About</a>
+          <a href='/calendar/' className='nav-item calendar'>Calendar</a>
+          <a href='/projects/' className='nav-item projects'>Projects</a>
+          <a href='/get-involved/' className='nav-item get-involved'>Get Involved</a>
+          <a href='/' className='nav-item home'>Home</a>
         </div>
       </div>
     )

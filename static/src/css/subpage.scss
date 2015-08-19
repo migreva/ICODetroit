@@ -21,6 +21,8 @@
     .nav-item {
       background: $color;
 
+      @include darken-on-hover($color);
+
     }
   }
 }
@@ -144,33 +146,9 @@ body {
   left: 0;
   background: transparent;
 
-   .nav-item {
+  .nav-item {
     opacity: 0;
     border: 1px solid white;
-
-    &.projects {
-      background: $projects-color;
-
-      @include darken-on-hover($projects-color);
-    }
-
-    &.calendar {
-      background: $calendar-color;
-
-      @include darken-on-hover($calendar-color);
-    }
-
-    &.blog {
-      background: $blog-color;
-
-      @include darken-on-hover($blog-color);
-    }
-
-    &.about {
-      background: $about-color;
-
-      @include darken-on-hover($about-color);
-    }
   }
 }
 
