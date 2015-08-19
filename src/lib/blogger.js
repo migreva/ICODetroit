@@ -64,7 +64,18 @@ export default class Blogger {
       request.get(url, (err, resp, body) => {
         if (err) reject(err);
 
-        resolve(JSON.parse(body));
+        let response = {};
+
+        try {
+          response = JSON.parse(body);
+        }
+        catch(e) {
+          console.log(`Error parsing blogger response`);
+          console.log(body);
+          console.log(e);
+        }
+
+        resolve(response);
       });
     });
   }

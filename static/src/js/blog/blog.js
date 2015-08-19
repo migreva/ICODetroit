@@ -17,12 +17,15 @@ function init() {
       throw new Error(e);
     }
 
+    let items = [];
     if (!('items' in body)) {
       console.log('No blog items found');
+    } else {
+      items = body.items;
     }
 
     let blogPosts = React.render(
-      <Blog posts= { body.items }/>,
+      <Blog posts= { items }/>,
       document.getElementById('blog-posts')
     )
 

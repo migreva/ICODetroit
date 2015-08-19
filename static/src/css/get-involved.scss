@@ -1,0 +1,35 @@
+@import './subpage.scss';
+
+.write-up {
+  width: 50%;
+  text-align: right;
+  display: inline-block;
+  float: left;
+  font-family: $paragraph-font;
+  margin-top: 20%;
+  font-size: 26px;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    text-align: center;
+    margin-top: 0%;
+  }
+}
+
+.form {
+  text-align: center;
+  width: 50%;
+  display: inline-block;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+}
+
+iframe {
+  max-width: 90vw;
+  width: 100%;
+  text-align: center;
+
+}
+
