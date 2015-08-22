@@ -87,7 +87,14 @@ class Filters extends React.Component {
     super(args);
 
     this.state = {
+      showFilters: false
     }
+  }
+
+  toggleFilters() {
+    this.setState({
+      showFilters: !this.state.showFilters
+    });
   }
 
   selectFilter(filterString) {
@@ -113,11 +120,11 @@ class Filters extends React.Component {
     let filterString = filter.toString();
     return (
       <div className='filter active'>
-        { filterString }
-        <div className='remove-filter'
+        <span className='filter-content'>{ filterString }</span>
+        <span className='remove-filter'
           onClick={ this.removeFilter.bind(this, filterString) }>
             X
-        </div>
+        </span>
       </div>
     )
   }
@@ -130,19 +137,44 @@ class Filters extends React.Component {
     return (
       <div className='filter available'
         onClick={ this.selectFilter.bind(this, filterString) }>
-          { filterString }
+          <span className='filter-content'>{ filterString }</span>
+      </div>
+    )
+  }
+
+  renderActiveFilters() {
+    let activeFilters = tagStore.getActiveTags();
+
+    if (!activeFilters.length)return null;
+
+    return (
+      <div className='filter-container active-filters'>
+        <div className='title'>Active Filters</div>
+        { activeFilters.map(this.renderActiveFilter.bind(this)) }
+      </div>
+    )
+  }
+
+  renderAvailableFilters() {
+    let inactiveFilters = tagStore.getInactiveTags();
+
+    if (!inactiveFilters.length) return null;
+
+    return (
+      <div className='filter-container available-filters'>
+        <div className='title'>Available Filters</div>
+        { inactiveFilters.map(this.renderAvailableFilter.bind(this)) }
       </div>
     )
   }
 
   render() {
     return (
-      <div className='filters'>
-        <div className='active-filters'>
-          { tagStore.getActiveTags().map(this.renderActiveFilter.bind(this)) }
-        </div>
-        <div className='available-filters'>
-          { tagStore.getInactiveTags().map(this.renderAvailableFilter.bind(this)) }
+      <div className={ `filters ${this.state.showFilters ? 'show' : 'hide'}`}>
+        <div className='filter-display-toggle' onClick={ this.toggleFilters.bind(this) }>Filters</div>
+        <div className='filters-container'>
+          { this.renderActiveFilters() }
+          { this.renderAvailableFilters() }
         </div>
       </div>
     )
