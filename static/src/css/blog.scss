@@ -1,28 +1,62 @@
 @import 'jeet/scss/jeet/index';
 @import './lib/base';
 
-#blog-posts {
+$filter-font-size: 20px;
+$filter-line-height: 30px;
+
+#blog {
   padding: 5%;
 
   .filters {
     text-align: center;
 
-    .available-filter {
-      @include column(1/3);
+    .filter {
       display: inline-block;
-      color: $success-color;
       text-transform: capitalize;
       text-align: center;
       cursor: pointer;
+      font-size: $filter-font-size;
+      line-height: $filter-line-height;
+      @include transition(all 250ms ease-in);
+      width: 30%;
+      margin-right: 3%;
+      position: relative;
+      font-family: 'Claire Hand';
 
       @media (min-width: $screen-md) {
-        @include column(1/5);
+        width: 20%;
+        margin-right: 3%;
       }
 
       &:before {
         content: '#';
         display: inline-block;
         margin-right: 5px;
+      }
+
+      &.available {
+        color: $blog-color;
+        border: 1px solid $blog-color;
+
+        &:hover {
+          background: $blog-color;
+          color: white;
+        }
+      }
+
+      &.active {
+        color: white;
+        background: $blog-color;
+
+        .remove-filter {
+          color: white;
+          background: $warning-color;
+          height: 100%;
+          width: 10%;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
       }
     }
   }

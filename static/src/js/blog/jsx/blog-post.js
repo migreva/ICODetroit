@@ -40,7 +40,7 @@ export default class BlogPostJsx extends React.Component {
             { this.published }
           </div>
         </div>
-        <div className='content' dangerouslySetInnerHTML={{__html: this.content}}/>
+        <div className='blog-content' dangerouslySetInnerHTML={{__html: this.content}}/>
         <div className='author'>
           By { this.author }
         </div>
