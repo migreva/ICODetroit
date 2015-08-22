@@ -26,7 +26,7 @@ function init() {
 
     let blogPosts = React.render(
       <Blog posts= { items }/>,
-      document.getElementById('blog-posts')
+      document.getElementById('blog')
     )
 
 
