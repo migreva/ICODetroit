@@ -55,7 +55,7 @@
     padding-top: 10px;
     border-radius: 10px;
 
-    @include darken-on-hover($projects-color);
+    @include button($projects-color);
 
   }
 }
