@@ -59,6 +59,7 @@ body {
   left: 0;
   line-height: $footer-line-height;
   color: white;
+  z-index: $footer-z-index;
 
   .page-name {
     text-transform: lowercase;

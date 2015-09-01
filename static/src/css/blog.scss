@@ -4,22 +4,30 @@
 $filter-font-size: 20px;
 $filter-line-height: 30px;
 
+$blog-padding: 5%;
+
 #blog {
-  padding: 5%;
+  padding: $blog-padding;
+  margin-bottom: $footer-height * 2;
 
   .filters {
     text-align: center;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    bottom: $footer-height + 20px;
+    width: 100% - ($blog-padding * 2);
+    z-index: $footer-z-index / 2;
 
     .filters-container {
       display: none;
       position: absolute;
+      bottom: 115%;
       background: white;
       border: 1px solid $blog-color;
       border-radius: 5px;
-      width: 100%;
       margin-top: 10px;
       box-shadow: 0 0 .5em black;
+      width: 100%;
     }
 
     .filter-display-toggle {

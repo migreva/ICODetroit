@@ -171,7 +171,7 @@ class Filters extends React.Component {
   render() {
     return (
       <div className={ `filters ${this.state.showFilters ? 'show' : 'hide'}`}>
-        <div className='filter-display-toggle' onClick={ this.toggleFilters.bind(this) }>Filters</div>
+        <div className='filter-display-toggle' onClick={ this.toggleFilters.bind(this) }>Tags</div>
         <div className='filters-container'>
           { this.renderActiveFilters() }
           { this.renderAvailableFilters() }
