@@ -3,7 +3,11 @@ extends ./subpage
 block content
   .write-up Imaginarium Creative Outreach will do its best to raise awareness for all the opportunities Detroiters have to inspire and uplift their communities through the arts. Not only will ICO hosts projects and initiatives, we will also shine light on the incredible acts happening with local organizations, programs, and people
   .form
-    iframe(src='https://docs.google.com/forms/d/1h3bj6lCDTDztUTuLj5DIFWoZVXTzKY8kh6ISIPm19uc/viewform?embedded=true', width='760', height='1100', frameborder='0', marginheight='0', marginwidth='0') Loading...
+    //-iframe(src='https://docs.google.com/forms/d/1h3bj6lCDTDztUTuLj5DIFWoZVXTzKY8kh6ISIPm19uc/viewform?embedded=true', width='760', height='1100', frameborder='0', marginheight='0', marginwidth='0') Loading...
+    .form-title Contact Us!
+    include ./components/contact-form
 
 block css
   link(href='/dist/css/get-involved.css' rel='stylesheet')
+  //-link(href='https://docs.google.com/static/forms/client/css/253394024-formview_embedded_st_ltr.css', type='text/css', rel='stylesheet')
+
