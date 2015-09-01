@@ -1,6 +1,6 @@
 @import './constants';
 
-@mixin transition($values) {
+@mixin transition($values...) {
   transition: $values;
   -o-transition: $values;
   -moz-transition: $values;
@@ -11,7 +11,7 @@
   background-color: $color;
   color: white;
   border-radius: 10px;
-  @include transition('background 250ms linear, color 250ms linear');
+  @include transition(background 250ms linear, color 250ms linear);
 
   &:hover, &.active {
     background-color: darken($color, 20%);
