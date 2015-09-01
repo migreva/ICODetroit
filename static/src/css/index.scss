@@ -50,36 +50,16 @@ body {
     }
 
     &.projects {
-      background: $primary-color;
-      color: white;
-
-      &:hover {
-        background: darken($primary-color, 20%);
-      }
+      @include button($projects-color);
     }
     &.calendar {
-      background: $secondary-color;
-      color: white;
-
-      &:hover {
-        background: darken($secondary-color, 20%);
-      }
+      @include button($secondary-color);
     }
     &.about {
-      background: $about-color;
-      color: white;
-
-      &:hover {
-        background: darken($about-color, 20%);
-      }
+      @include button($about-color);
     }
     &.blog {
-      background: $success-color;
-      color: white;
-
-      &:hover {
-        background: darken($success-color, 20%);
-      }
+      @include button($success-color);
     }
   }
 }

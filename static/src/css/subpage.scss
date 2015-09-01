@@ -21,7 +21,7 @@
     .nav-item {
       background: $color;
 
-      @include darken-on-hover($color);
+      @include button($color);
 
     }
   }
@@ -45,10 +45,6 @@ body {
   text-align: center;
   width: 100%;
   display: block;
-
-  .page-title {
-    letter-spacing: 10px;
-  }
 
   .page-subtitle {
     text-transform: lowercase;

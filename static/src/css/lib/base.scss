@@ -19,7 +19,11 @@
 .page-title, .page-subtitle {
   display: inline-block;
   margin-right: 20px;
-  font-size: 40px
+  font-size: 40px;
+
+  @media (max-width: $screen-sm) {
+    margin-right: 0;
+  }
 }
 
 @mixin darken-on-hover($color, $percentage: 20%) {
