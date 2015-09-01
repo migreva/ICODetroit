@@ -1,6 +1,19 @@
+@import './constants';
+
 @mixin transition($values) {
   transition: $values;
   -o-transition: $values;
   -moz-transition: $values;
   -webkit-transition: $values;
+}
+
+@mixin button($color: $primary-color) {
+  background-color: $color;
+  color: white;
+  border-radius: 10px;
+  @include transition(all 250ms linear);
+
+  &:hover, &.active {
+    background-color: darken($color, 20%);
+  }
 }
