@@ -148,7 +148,6 @@ $blog-padding: 5%;
         font-size: 25px;
         height: 25px;
         color: #74C19E;
-        margin-bottom: 15px;
 
         a {
           text-decoration: none;
@@ -159,11 +158,11 @@ $blog-padding: 5%;
           }
         }
       }
+    }
 
-      .title {
-        letter-spacing: 5px;
-        word-spacing: 5px;
-      }
+    img {
+      max-width: 100%;
+      display: block;
     }
   }
 
