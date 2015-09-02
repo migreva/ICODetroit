@@ -38,9 +38,6 @@ class BrotherBear extends Project {
             <p>Local artists will create artwork that will uplift children through love and creativity by adding a little artistic sunshine to their lives. Pairing donated stuffed animals with amazing creatives, The Brother Bear Project will offer children a chance to have not only a cuddly friend for times of need, but a piece of their community,  Detroit’s culture, and some pretty cool art as well.</p>
             <p>Poetry, paintings, short stories, songs, illustrations, and other uplifting imagery will showcase inspiring messages for children to have in fostering hope and building positive character.</p>
           </div>
-          <div className='image'>
-            <img src='/img/brotherbear2.jpeg'/>
-          </div>
         </div>
       </div>
     )

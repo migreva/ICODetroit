@@ -1,29 +1,21 @@
 @import './subpage.scss';
 
-.content {
-  margin-top: 10%;
-
-  @media (max-width: $screen-sm) {
-    margin-top: 0%;
-  }
+.write-up, .contact-info {
+  width: 100%;
+  text-align: center;
 }
 
-.write-up, .contact-info {
-  width: 50%;
+.write-up {
+  display: inline-block;
+  float: left;
   font-family: $paragraph-font;
+  font-size: 26px;
+  padding: 0% 5%;
 
   @media (max-width: $screen-sm) {
     width: 100%;
     text-align: center;
-  }
-}
-
-.write-up {
-  float: left;
-  text-align: right;
-
-  @media (max-width: $screen-sm) {
-    text-align: center;
+    margin: 0;
   }
 }
 
@@ -31,7 +23,8 @@
   float: right;
   text-align: center;
   font-family: 'Claire Hand';
-  margin-top: 5%;
+  margin-top: 20px;
+  margin-bottom: $footer-height * 2;
 
   p {
     font-size: 50px;
