@@ -140,6 +140,9 @@ $blog-padding: 5%;
   .blog-post {
 
     .header {
+      position: relative;
+      display: block;
+      height: 50px;
 
       & > div {
         @include column(1/1);
@@ -158,6 +161,9 @@ $blog-padding: 5%;
           }
         }
       }
+    }
+
+    .blog-content {
     }
 
     img {

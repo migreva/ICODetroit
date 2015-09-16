@@ -19,7 +19,9 @@ export default class Blogger {
 
     this.setRoutes(app);
 
-    this.bloggerLoop();
+    this.bloggerLoop().catch(function(e) {
+      throw new Error(e);
+    });
   }
 
   setRoutes(app) {
@@ -28,11 +30,13 @@ export default class Blogger {
     this.router = Router();
 
     this.router.get('/blog/getPosts/', async (req, res) => {
-      if (this.cache) res.json(this.cache);
+      if (this.cache) {
+        res.json(this.cache);
+        return;
+      }
 
       let articles;
       try {
-        // await articles = this.fetchArticles();
         articles = await this.fetchArticles();
         res.json(articles);
       }
@@ -50,10 +54,14 @@ export default class Blogger {
       this.cache = await this.fetchArticles()
     }
     catch(e) {
-      console.error(e);
+      throw new Error(e);
     }
 
-    setTimeout(this.bloggerLoop, this.timeout)
+    setTimeout(() => {
+      this.bloggerLoop.call(this).catch(function(e) {
+        throw new Error(e);
+      });
+    }, this.timeout)
   }
 
   fetchArticles() {
@@ -72,7 +80,7 @@ export default class Blogger {
         catch(e) {
           console.log(`Error parsing blogger response`);
           console.log(body);
-          console.log(e);
+          throw new Error(e);
         }
 
         resolve(response);
