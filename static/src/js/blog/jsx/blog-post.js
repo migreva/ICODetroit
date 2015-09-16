@@ -15,7 +15,7 @@ export default class BlogPostJsx extends React.Component {
     this.author = post.author;
     this.url = post.url;
     this.author = post.author.displayName;
-    this.labels = post.labels;
+    this.labels = post.labels || [];
 
     // Format the date
     let date = new Date(post.published);

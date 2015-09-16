@@ -20,11 +20,11 @@ export default class Blog extends React.Component {
    */
   parsePosts(posts) {
     for (let post of posts) {
+      if (!post.labels) continue;
       for (let tagString of post.labels) {
         tagStore.addTag(tagString);
       }
     }
-    tagStore.addTag('not a real tag');
 
     return posts;
   }
@@ -45,7 +45,7 @@ export default class Blog extends React.Component {
 
       let validPost = true;
       for (let filter of filters) {
-        if (post.labels.indexOf(filter.toString()) < 0) {
+        if (!post.labels || post.labels.indexOf(filter.toString()) < 0) {
           validPost = false;
           break;
         }
@@ -158,7 +158,11 @@ class Filters extends React.Component {
   renderAvailableFilters() {
     let inactiveFilters = tagStore.getInactiveTags();
 
-    if (!inactiveFilters.length) return null;
+    if (!inactiveFilters.length) return (
+      <div className='filter-container'>
+        No filters available
+      </div>
+    );
 
     return (
       <div className='filter-container available-filters'>
