@@ -56,6 +56,7 @@ class Projects extends React.Component {
         <div className={ className }>
            <div className='project-title'>{ project.name }</div>
            <div className='see-more' onClick={ this.showSummary.bind(this, projectName) }>See More</div>
+           <div className='overlay'></div>
         </div>
       ));
     }
