@@ -156,7 +156,6 @@ class Filters extends React.Component {
   }
 
   renderAvailableFilters() {
-    let inactiveFilters = tagStore.getInactiveTags();
 
     if (!inactiveFilters.length) return (
       <div className='filter-container'>
@@ -173,6 +172,9 @@ class Filters extends React.Component {
   }
 
   render() {
+    let inactiveFilters = tagStore.getInactiveTags();
+    if (!inactiveFilters.length) return null;
+
     return (
       <div className={ `filters ${this.state.showFilters ? 'show' : 'hide'}`}>
         <div className='filter-display-toggle' onClick={ this.toggleFilters.bind(this) }>Tags</div>

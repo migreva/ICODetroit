@@ -54,7 +54,7 @@ export default class Blogger {
       this.cache = await this.fetchArticles()
     }
     catch(e) {
-      throw new Error(e);
+      console.error(e);
     }
 
     setTimeout(() => {
@@ -70,7 +70,8 @@ export default class Blogger {
       let url = this.getUrl('posts');
       console.log(`Fetching ${url}`);
       request.get(url, (err, resp, body) => {
-        if (err) reject(err);
+        console.log(resp.statusCode);
+        if (err || resp.statusCode != 200) reject(err);
 
         let response = {};
 
