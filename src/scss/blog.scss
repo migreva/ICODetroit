@@ -233,6 +233,22 @@ $blog-title-font-size: 25px;
   }
 }
 
+.blog-content {
+  a {
+    color: $blog-color;
+    transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -webkit-transition: all 200ms linear; 
+
+    &:hover {
+      background-color: $blog-color;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
 .author {
   @include column(1/1);
   color: $warning-color;
