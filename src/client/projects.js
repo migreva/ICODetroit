@@ -1,6 +1,7 @@
 import React from 'react';
-import projectJsx from './jsx/projects';
-import Subpage from '../lib/subpage';
+
+import projectJsx from './projects/jsx/projects';
+import Subpage from './subpage';
 
 let projectInfo = {
   'board-and-beautify': {

@@ -1,7 +1,8 @@
 import request from 'request';
-import Blog from './jsx/blog';
 import React from 'react';
-import Subpage from '../lib/subpage.js';
+
+import Blog from './blog/jsx/blog';
+import Subpage from './subpage.js';
 
 function init() {
 
@@ -33,6 +34,4 @@ function init() {
   });
 }
 
-module.exports = {
-  init
-}
+init();

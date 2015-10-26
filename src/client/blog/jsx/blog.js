@@ -145,7 +145,7 @@ class Filters extends React.Component {
   renderActiveFilters() {
     let activeFilters = tagStore.getActiveTags();
 
-    if (!activeFilters.length)return null;
+    // if (!activeFilters.length)return null;
 
     return (
       <div className='filter-container active-filters'>

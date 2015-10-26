@@ -4,7 +4,7 @@ import request from 'request';
 
 export default class Blogger {
 
-  constructor(app) {
+  constructor() {
     this.cache = undefined;
     this.apiRoot = 'https://www.googleapis.com/blogger/v3/';
     this.api = {
@@ -17,19 +17,17 @@ export default class Blogger {
     }
     this.timeout = 1000 * 60 * 60; // 1 hour
 
-    this.setRoutes(app);
+    this.setRoutes();
 
     this.bloggerLoop().catch(function(e) {
       throw new Error(e);
     });
   }
 
-  setRoutes(app) {
-    if (!app) return;
-
+  setRoutes() {
     this.router = Router();
 
-    this.router.get('/blog/getPosts/', async (req, res) => {
+    this.router.get('/getPosts/', async (req, res) => {
       if (this.cache) {
         res.json(this.cache);
         return;
@@ -44,8 +42,6 @@ export default class Blogger {
         res.status(500).json(e);
       }
     });
-
-    app.use(this.router);
   }
 
   async bloggerLoop() {

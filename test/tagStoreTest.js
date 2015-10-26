@@ -1,5 +1,5 @@
 import {ok, equal, deepEqual} from 'assert';
-import TagStore from '../static/src/js/blog/store/tags';
+import TagStore from '../src/client/blog/store/tags';
 
 let tagStore;
 
