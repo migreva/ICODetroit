@@ -6,6 +6,8 @@ $filter-line-height: 30px;
 
 $blog-padding: 5%;
 
+$blog-title-font-size: 25px;
+
 #blog {
   padding: $blog-padding;
   margin-bottom: $footer-height * 2;
@@ -142,14 +144,12 @@ $blog-padding: 5%;
     .header {
       position: relative;
       display: block;
-      height: 50px;
+      height: $blog-title-font-size * 2;
 
       & > div {
         @include column(1/1);
         font-family: 'Claire Hand';
         font-weight: bold;
-        font-size: 25px;
-        height: 25px;
         color: #74C19E;
 
         a {
@@ -160,6 +160,16 @@ $blog-padding: 5%;
             text-decoration: underline;
           }
         }
+      }
+
+      .title {
+        font-size: $blog-title-font-size;
+        line-height: $blog-title-font-size;
+      }
+
+      .date {
+        line-height: $blog-title-font-size;
+        font-size: $blog-title-font-size / 2;
       }
     }
 
@@ -223,5 +233,13 @@ $blog-padding: 5%;
       z-index: -1;
       top: 50%;
     }
+  }
+}
+
+
+/** Google stuff */
+.separator {
+  img {
+    margin: 0 auto;
   }
 }
