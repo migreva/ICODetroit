@@ -1,5 +1,6 @@
-import Navbar from './navbar';
 import React from 'react';
+
+import Navbar from './lib/navbar';
 
 class Subpage {
   constructor() {

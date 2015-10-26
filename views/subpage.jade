@@ -4,7 +4,7 @@ html
     title=title + ' - ICO Detroit'
     include components/meta
 
-    link(href='/dist/css/subpage.css' rel='stylesheet')
+    link(href='/css/subpage.css' rel='stylesheet')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     block css
   body(class='#{title.toLowerCase().replace(" ", "-")}')
@@ -23,4 +23,4 @@ html
           block footer-extra
 
     block js
-      script(src='/dist/js/lib/subpage.js')
+      script(src='/js/subpage.js')
