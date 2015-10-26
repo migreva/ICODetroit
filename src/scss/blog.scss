@@ -1,0 +1,227 @@
+@import 'jeet/scss/jeet/index';
+@import './lib/base';
+
+$filter-font-size: 20px;
+$filter-line-height: 30px;
+
+$blog-padding: 5%;
+
+#blog {
+  padding: $blog-padding;
+  margin-bottom: $footer-height * 2;
+
+  .filters {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: $footer-height + 20px;
+    width: 100% - ($blog-padding * 2);
+    z-index: $footer-z-index / 2;
+
+    .filters-container {
+      display: none;
+      position: absolute;
+      bottom: 115%;
+      background: white;
+      border: 1px solid $blog-color;
+      border-radius: 5px;
+      margin-top: 10px;
+      box-shadow: 0 0 .5em black;
+      width: 100%;
+    }
+
+    .filter-display-toggle {
+      background: $blog-color;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'KD';
+      position: relative;
+      cursor: pointer;
+      border-radius: 10px;
+      @include transition(transform 250ms linear);
+
+      &:after {
+        content: '^';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 15%;
+      }
+
+      &, &:after {
+        line-height: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: white;
+      }
+
+      &:hover {
+        background: darken($blog-color, 20%);
+      }
+    }
+
+    &.show {
+      .filters-container {
+        display: block;
+      }
+
+      .filter-display-toggle {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .filter {
+      display: inline-block;
+      text-transform: capitalize;
+      text-align: center;
+      cursor: pointer;
+      font-size: $filter-font-size * .75;
+      line-height: $filter-line-height *.75;
+      height: $filter-line-height * .75;
+      @include transition(all 250ms ease-in);
+      width: 40%;
+      margin-right: 3%;
+      margin-bottom: 20px;
+      position: relative;
+      font-family: 'Claire Hand';
+      border-radius: 5px;
+
+      .filter-content {
+        width: 100%;
+        float: left;
+      }
+
+      @media (min-width: $screen-md) {
+        width: 20%;
+        margin-right: 3%;
+        font-size: $filter-font-size;
+        line-height: $filter-line-height;
+        height: $filter-line-height;
+      }
+
+      &.available {
+        color: $blog-color;
+        border: 1px solid $blog-color;
+
+        &:hover {
+          background: $blog-color;
+          color: white;
+        }
+
+      }
+
+      &.active {
+        color: white;
+        background: $blog-color;
+
+        .filter-content {
+          width: 80%;
+        }
+
+        .remove-filter {
+          color: white;
+          background: $warning-color;
+          height: 100%;
+          width: 20%;
+          border-top-right-radius: inherit;
+          border-bottom-right-radius: inherit;
+          line-height: inherit;
+          float: left;
+
+        }
+      }
+    }
+  }
+
+  .blog-post {
+
+    .header {
+      position: relative;
+      display: block;
+      height: 50px;
+
+      & > div {
+        @include column(1/1);
+        font-family: 'Claire Hand';
+        font-weight: bold;
+        font-size: 25px;
+        height: 25px;
+        color: #74C19E;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .blog-content {
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  .author {
+    @include column(1/1);
+    color: $warning-color;
+    font-size: 20px;
+    font-family: 'KD';
+    margin: 10px 0px;
+    opacity: .75;
+  }
+
+  .labels {
+
+    .label {
+      display: inline-block;
+      margin-right: 20px;
+      color: $success-color;
+
+      &:before {
+        content: '#';
+      }
+    }
+  }
+}
+
+.special-tags {
+  height: 100%;
+  display: none;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    width: 100%;
+  }
+
+  .tag {
+    @include column(1/3);
+    position: relative;
+    display: inline-block;
+    font-family: 'Claire Hand';
+    float: right;
+    text-align: center;
+    cusor: pointer;
+
+    &:before {
+      content: '#';
+      color: darken($success-color, 10%);
+      position: absolute;
+      font-size: 200px;
+      left: 0%;
+      z-index: -1;
+      top: 50%;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import 'fonts';
+@import './mixin';
+@import './constants';
+
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-family: 'Claire Hand';
+  font-weight: bold;
+}
+
+.page-subtitle {
+  font-family: 'KD';
+}
+
+.page-title, .page-subtitle {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 40px;
+
+  @media (max-width: $screen-sm) {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@mixin darken-on-hover($color, $percentage: 20%) {
+  transition: background 250ms ease-in;
+  -webkit-transition: background 250ms ease-in;
+  -moz-transition: background 250ms ease-in;
+  -o-transition: background 250ms ease-in;
+
+  &:hover {
+    background: darken($color, $percentage);
+  }
+}

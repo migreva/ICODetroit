@@ -1,0 +1,55 @@
+@import './subpage.scss';
+
+.write-up, .contact-info {
+  width: 100%;
+  text-align: center;
+}
+
+.write-up {
+  display: inline-block;
+  float: left;
+  font-family: $paragraph-font;
+  font-size: 26px;
+  padding: 0% 5%;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.contact-info {
+  float: right;
+  text-align: center;
+  font-family: 'Claire Hand';
+  margin-top: 20px;
+  margin-bottom: $footer-height * 2;
+
+  p {
+    font-size: 30px;
+    width: 75%;
+    margin: 0 auto;
+    color: $about-color;
+  }
+
+  .get-in-touch {
+    width: 50%;
+    margin: 0 auto;
+    background: $projects-color;
+    color: white;
+    font-family: 'Claire Hand';
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px;
+    padding-top: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    @include button($projects-color);
+
+  }
+}
