@@ -1,0 +1,369 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/** Claire Hand **/
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: bold;
+  src: url(../../../fonts/ClaireHand/ClaireHandBold.ttf); }
+
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: normal;
+  src: url(../../../fonts/ClaireHand/ClaireHandRegular.ttf); }
+
+@font-face {
+  font-family: 'Claire Hand';
+  font-weight: lighter;
+  src: url(../../../fonts/ClaireHand/ClaireHandLight.ttf); }
+
+/** KD Always a Good Time **/
+@font-face {
+  font-family: 'KD';
+  font-weight: normal;
+  src: url(../../../fonts/KGAlwaysAGoodTime/KGAlwaysAGoodTime.ttf); }
+
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+.page-title {
+  font-family: 'Claire Hand';
+  font-weight: bold; }
+
+.page-subtitle {
+  font-family: 'KD'; }
+
+.page-title, .page-subtitle {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 40px; }
+  @media (max-width: 768px) {
+    .page-title, .page-subtitle {
+      margin-right: 0;
+      width: 100%; } }
+
+#blog {
+  padding: 5%;
+  margin-bottom: 120px; }
+  #blog .filters {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 80px;
+    width: 90%;
+    z-index: 50; }
+    #blog .filters .filters-container {
+      display: none;
+      position: absolute;
+      bottom: 115%;
+      background: white;
+      border: 1px solid #74C19E;
+      border-radius: 5px;
+      margin-top: 10px;
+      box-shadow: 0 0 .5em black;
+      width: 100%; }
+    #blog .filters .filter-display-toggle {
+      background: #74C19E;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'KD';
+      position: relative;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 250ms linear;
+      -o-transition: transform 250ms linear;
+      -moz-transition: transform 250ms linear;
+      -webkit-transition: transform 250ms linear; }
+      #blog .filters .filter-display-toggle:after {
+        content: '^';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 15%; }
+      #blog .filters .filter-display-toggle, #blog .filters .filter-display-toggle:after {
+        line-height: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: white; }
+      #blog .filters .filter-display-toggle:hover {
+        background: #408f6b; }
+    #blog .filters.show .filters-container {
+      display: block; }
+    #blog .filters.show .filter-display-toggle:after {
+      transform: rotate(180deg); }
+    #blog .filters .filter {
+      display: inline-block;
+      text-transform: capitalize;
+      text-align: center;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 22.5px;
+      height: 22.5px;
+      transition: all 250ms ease-in;
+      -o-transition: all 250ms ease-in;
+      -moz-transition: all 250ms ease-in;
+      -webkit-transition: all 250ms ease-in;
+      width: 40%;
+      margin-right: 3%;
+      margin-bottom: 20px;
+      position: relative;
+      font-family: 'Claire Hand';
+      border-radius: 5px; }
+      #blog .filters .filter .filter-content {
+        width: 100%;
+        float: left; }
+      @media (min-width: 992px) {
+        #blog .filters .filter {
+          width: 20%;
+          margin-right: 3%;
+          font-size: 20px;
+          line-height: 30px;
+          height: 30px; } }
+      #blog .filters .filter.available {
+        color: #74C19E;
+        border: 1px solid #74C19E; }
+        #blog .filters .filter.available:hover {
+          background: #74C19E;
+          color: white; }
+      #blog .filters .filter.active {
+        color: white;
+        background: #74C19E; }
+        #blog .filters .filter.active .filter-content {
+          width: 80%; }
+        #blog .filters .filter.active .remove-filter {
+          color: white;
+          background: #E5A33A;
+          height: 100%;
+          width: 20%;
+          border-top-right-radius: inherit;
+          border-bottom-right-radius: inherit;
+          line-height: inherit;
+          float: left; }
+  #blog .blog-post .header {
+    position: relative;
+    display: block;
+    height: 50px; }
+    #blog .blog-post .header > div {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: 3%;
+      font-family: 'Claire Hand';
+      font-weight: bold;
+      font-size: 25px;
+      height: 25px;
+      color: #74C19E; }
+      #blog .blog-post .header > div:before, #blog .blog-post .header > div:after {
+        content: '';
+        display: table; }
+      #blog .blog-post .header > div:after {
+        clear: both; }
+      #blog .blog-post .header > div:last-child {
+        margin-right: 0%; }
+      #blog .blog-post .header > div a {
+        text-decoration: none;
+        color: inherit; }
+        #blog .blog-post .header > div a:hover {
+          text-decoration: underline; }
+  #blog .blog-post img {
+    max-width: 100%;
+    display: block; }
+  #blog .author {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    color: #E5A33A;
+    font-size: 20px;
+    font-family: 'KD';
+    margin: 10px 0px;
+    opacity: .75; }
+    #blog .author:before, #blog .author:after {
+      content: '';
+      display: table; }
+    #blog .author:after {
+      clear: both; }
+    #blog .author:last-child {
+      margin-right: 0%; }
+  #blog .labels .label {
+    display: inline-block;
+    margin-right: 20px;
+    color: #74C19E; }
+    #blog .labels .label:before {
+      content: '#'; }
+
+.special-tags {
+  height: 100%;
+  display: none;
+  overflow: hidden; }
+  @media (min-width: 768px) {
+    .special-tags {
+      display: block;
+      width: 100%; } }
+  .special-tags .tag {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.33333%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: relative;
+    display: inline-block;
+    font-family: 'Claire Hand';
+    float: right;
+    text-align: center;
+    cusor: pointer; }
+    .special-tags .tag:before, .special-tags .tag:after {
+      content: '';
+      display: table; }
+    .special-tags .tag:after {
+      clear: both; }
+    .special-tags .tag:last-child {
+      margin-right: 0%; }
+    .special-tags .tag:before {
+      content: '#';
+      color: #51b185;
+      position: absolute;
+      font-size: 200px;
+      left: 0%;
+      z-index: -1;
+      top: 50%; }
