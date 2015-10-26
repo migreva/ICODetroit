@@ -47,6 +47,7 @@ export default class BlogPostJsx extends React.Component {
         <div className='labels'>
           { this.labels.map(this.renderLabels) }
         </div>
+        <hr/>
       </div>
     )
   }

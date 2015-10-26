@@ -71,12 +71,12 @@ export default class Blog extends React.Component {
 
   render() {
     return (
-      <div className='blog'>
-        <Filters filterCallback={ this.filterChange.bind(this) }/>
-
+      <div className='blog-container'>
         <div className='blog-posts'>
           { this.state.posts.map(this.renderBlogPost) }
         </div>
+
+        <Filters filterCallback={ this.filterChange.bind(this) }/>
       </div>
     )
   }
@@ -145,10 +145,11 @@ class Filters extends React.Component {
   renderActiveFilters() {
     let activeFilters = tagStore.getActiveTags();
 
-    // if (!activeFilters.length)return null;
+    if (!activeFilters.length) return null;
 
     return (
       <div className='filter-container active-filters'>
+        <hr/>
         <div className='title'>Active Filters</div>
         { activeFilters.map(this.renderActiveFilter.bind(this)) }
       </div>
@@ -156,6 +157,7 @@ class Filters extends React.Component {
   }
 
   renderAvailableFilters() {
+    let inactiveFilters = tagStore.getInactiveTags();
 
     if (!inactiveFilters.length) return (
       <div className='filter-container'>
@@ -165,22 +167,19 @@ class Filters extends React.Component {
 
     return (
       <div className='filter-container available-filters'>
-        <div className='title'>Available Filters</div>
         { inactiveFilters.map(this.renderAvailableFilter.bind(this)) }
       </div>
     )
   }
 
   render() {
-    let inactiveFilters = tagStore.getInactiveTags();
-    if (!inactiveFilters.length) return null;
 
     return (
       <div className={ `filters ${this.state.showFilters ? 'show' : 'hide'}`}>
         <div className='filter-display-toggle' onClick={ this.toggleFilters.bind(this) }>Tags</div>
         <div className='filters-container'>
-          { this.renderActiveFilters() }
           { this.renderAvailableFilters() }
+          { this.renderActiveFilters() }
         </div>
       </div>
     )

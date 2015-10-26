@@ -6,7 +6,7 @@ import Subpage from './subpage.js';
 
 function init() {
 
-  request.get('/blog/getPosts/', {
+  request.get('/blog/get-posts/', {
     baseUrl: window.location.origin
   }, (err, resp, body) => {
     if (err) throw Error(err);

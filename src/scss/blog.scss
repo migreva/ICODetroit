@@ -9,201 +9,254 @@ $blog-padding: 5%;
 $blog-title-font-size: 25px;
 
 #blog {
-  padding: $blog-padding;
+  padding: 5% 15%;
   margin-bottom: $footer-height * 2;
+}
 
-  .filters {
+.blog-posts {
+  width: 75%;
+  display: inline-block;
+  float: left;
+  padding-right: 30px;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.filters {
+  width: 25%;
+  display: inline-block;
+  float: left;
+  font-family: 'Claire Hand';
+
+  @media (max-width: $screen-sm) {
     text-align: center;
     position: fixed;
-    width: 100%;
     bottom: $footer-height + 20px;
     width: 100% - ($blog-padding * 2);
     z-index: $footer-z-index / 2;
+    left: 0;
+    float: none;
+  }
 
-    .filters-container {
+  .filters-container {
+    display: block;
+    position: relative;
+    background: white;
+    border: 1px solid $blog-color;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 5%;
+
+    @media (max-width: $screen-sm) {
       display: none;
       position: absolute;
       bottom: 115%;
-      background: white;
-      border: 1px solid $blog-color;
-      border-radius: 5px;
-      margin-top: 10px;
       box-shadow: 0 0 .5em black;
-      width: 100%;
+    }
+
+    hr {
+      width: 75%;
+      margin: 20px auto;
+    }
+  }
+
+  .filter-display-toggle {
+    display: none;
+    background: $blog-color;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'KD';
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    @include transition(transform 250ms linear);
+
+    @media (max-width: $screen-sm) {
+      display: block;
+    }
+
+    &:after {
+      content: '^';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 15%;
+    }
+
+    &, &:after {
+      line-height: 30px;
+      height: 30px;
+      font-size: 20px;
+      color: white;
+    }
+
+    &:hover {
+      background: darken($blog-color, 20%);
+    }
+  }
+
+  &.show {
+    .filters-container {
+      display: block;
     }
 
     .filter-display-toggle {
-      background: $blog-color;
-      width: 50%;
-      margin: 0 auto;
-      text-align: center;
-      font-family: 'KD';
-      position: relative;
-      cursor: pointer;
-      border-radius: 10px;
-      @include transition(transform 250ms linear);
-
       &:after {
-        content: '^';
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 15%;
+        transform: rotate(180deg);
       }
+    }
+  }
 
-      &, &:after {
-        line-height: 30px;
-        height: 30px;
-        font-size: 20px;
-        color: white;
-      }
+  .filter {
+    display: inline-block;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+    font-size: $filter-font-size * .75;
+    margin-right: 3%;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'Claire Hand';
+    border-radius: 5px;
+    padding: 5% 3% 3% 3%;
+    @include transition(all 250ms ease-in);
+
+    @media (max-width: $screen-sm) {
+      padding: 2% 1% 1% 1%;
+    }
+
+    .filter-content {
+      width: 100%;
+    }
+
+    &.available {
+      color: $blog-color;
+      border: 1px solid $blog-color;
 
       &:hover {
-        background: darken($blog-color, 20%);
-      }
-    }
-
-    &.show {
-      .filters-container {
-        display: block;
-      }
-
-      .filter-display-toggle {
-        &:after {
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    .filter {
-      display: inline-block;
-      text-transform: capitalize;
-      text-align: center;
-      cursor: pointer;
-      font-size: $filter-font-size * .75;
-      line-height: $filter-line-height *.75;
-      height: $filter-line-height * .75;
-      @include transition(all 250ms ease-in);
-      width: 40%;
-      margin-right: 3%;
-      margin-bottom: 20px;
-      position: relative;
-      font-family: 'Claire Hand';
-      border-radius: 5px;
-
-      .filter-content {
-        width: 100%;
-        float: left;
-      }
-
-      @media (min-width: $screen-md) {
-        width: 20%;
-        margin-right: 3%;
-        font-size: $filter-font-size;
-        line-height: $filter-line-height;
-        height: $filter-line-height;
-      }
-
-      &.available {
-        color: $blog-color;
-        border: 1px solid $blog-color;
-
-        &:hover {
-          background: $blog-color;
-          color: white;
-        }
-
-      }
-
-      &.active {
-        color: white;
         background: $blog-color;
+        color: white;
+      }
 
-        .filter-content {
-          width: 80%;
+    }
+
+    &.active {
+      color: white;
+      background: $blog-color;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-right: 20px + 5px;
+
+      .remove-filter {
+        position: absolute;
+        display: inline-block;
+        color: white;
+        background: $warning-color;
+        height: 100%;
+        width: 20px;
+        left: 100%;
+        top: 0%;
+        float: left;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding-top: 5%;
+
+        @media (max-width: $screen-md) {
+          padding-top: 15%;
         }
 
-        .remove-filter {
-          color: white;
-          background: $warning-color;
-          height: 100%;
-          width: 20%;
-          border-top-right-radius: inherit;
-          border-bottom-right-radius: inherit;
-          line-height: inherit;
-          float: left;
-
+        @media (max-width: $screen-sm) {
+          padding-top: 5%;
         }
-      }
-    }
-  }
-
-  .blog-post {
-
-    .header {
-      position: relative;
-      display: block;
-      height: $blog-title-font-size * 2;
-
-      & > div {
-        @include column(1/1);
-        font-family: 'Claire Hand';
-        font-weight: bold;
-        color: #74C19E;
-
-        a {
-          text-decoration: none;
-          color: inherit;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      .title {
-        font-size: $blog-title-font-size;
-        line-height: $blog-title-font-size;
-      }
-
-      .date {
-        line-height: $blog-title-font-size;
-        font-size: $blog-title-font-size / 2;
-      }
-    }
-
-    .blog-content {
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-  }
-
-  .author {
-    @include column(1/1);
-    color: $warning-color;
-    font-size: 20px;
-    font-family: 'KD';
-    margin: 10px 0px;
-    opacity: .75;
-  }
-
-  .labels {
-
-    .label {
-      display: inline-block;
-      margin-right: 20px;
-      color: $success-color;
-
-      &:before {
-        content: '#';
       }
     }
   }
 }
+
+.blog-post {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: $footer-line-height * 2.5;
+
+    hr {
+      display: none;
+    }
+  }
+
+  .header {
+    position: relative;
+    display: block;
+    height: $blog-title-font-size * 2;
+
+    & > div {
+      @include column(1/1);
+      font-family: 'Claire Hand';
+      font-weight: bold;
+      color: #74C19E;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .title {
+      font-size: $blog-title-font-size;
+      line-height: $blog-title-font-size;
+    }
+
+    .date {
+      line-height: $blog-title-font-size;
+      font-size: $blog-title-font-size / 2;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  hr:last-child {
+    width: 75%;
+    margin: 40px auto;
+  }
+}
+
+.author {
+  @include column(1/1);
+  color: $warning-color;
+  font-size: 20px;
+  font-family: 'KD';
+  margin: 10px 0px;
+  opacity: .75;
+}
+
+.labels {
+  font-family: 'Claire Hand';
+
+  .label {
+    display: inline-block;
+    margin-right: 20px;
+    color: $success-color;
+
+    &:before {
+      content: '#';
+      margin-right: 2px;
+    }
+  }
+}
+
 
 .special-tags {
   height: 100%;

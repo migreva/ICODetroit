@@ -27,7 +27,7 @@ export default class Blogger {
   setRoutes() {
     this.router = Router();
 
-    this.router.get('/getPosts/', async (req, res) => {
+    this.router.get('/get-posts/', async (req, res) => {
       if (this.cache) {
         res.json(this.cache);
         return;
@@ -41,6 +41,17 @@ export default class Blogger {
       catch(e) {
         res.status(500).json(e);
       }
+    });
+
+    this.router.get('/update-posts/', async (req, res) => {
+      try {
+        this.cache = await this.fetchArticles();
+      }
+      catch(e) {
+        console.error(e);
+      }
+
+      res.json({ success: true, time: new Date() });
     });
   }
 
